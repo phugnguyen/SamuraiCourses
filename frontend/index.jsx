@@ -15,6 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const store = createStore(preloadedState);
-
+  window.currentUser = undefined;
   ReactDOM.render(<Root store={store} />, root);
 });
