@@ -22,3 +22,44 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+NOTES - STYLE BEFORE EVERYTHING 
+AUTH - ERRORS 
+* AUTH
+  * modal!!
+* Choose theme/ color theme
+  * run by ryan before executing
+* MVP 1
+  * layout -> choosing school -> choosing term 
+* MVP 2 
+  * dropdown selection classes 
+  * BONUS: sections - focus on main classes
+* MVP 3
+  * generate schedules
+* MVP 4
+  * generate schedule views
+* BONNUS 
+  * saved schedules
+  
+*SCHEMA
+  * times table
+  * course can have many times
+  * scrape real data
+  * courses table enrolled bonus
+    * current enrolled
+    * max enrolled
+  * calculate on the backend 
+    *send back up to schedule slice of state
+  * schedules
+    * SAVED boolean
+
+* Sample State
+  * preview slice of state for schedules
+  
+* backend routes
+  * nest courses under a school
+  * /api/courses
+  * * required params: school term subject number 
+* frontend routes
+  * bonus front end routes for sharing 
