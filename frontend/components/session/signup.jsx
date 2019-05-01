@@ -28,36 +28,40 @@ export default class Signup extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <h2>Sign Up!</h2>
+        <h2>Register</h2>
+        <br />
         <form>
-          <label>
-            Username:
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.handleInput("username")}
-            />
-          </label>
+          <label for="username">Username</label>
+          <br />
+          <input
+            id="username"
+            type="text"
+            value={this.state.username}
+            onChange={this.handleInput("username")}
+          />
+          <br />
 
-          <label>
-            Email:
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.handleInput("email")}
-            />
-          </label>
+          <label for="email">Email</label>
+          <br />
+          <input
+            id="email"
+            type="text"
+            value={this.state.email}
+            onChange={this.handleInput("email")}
+          />
+          <br />
 
-          <label>
-            Password:
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput("password")}
-            />
-          </label>
+          <label for="password">Password</label>
+          <br />
+          <input
+            id="password"
+            type="password"
+            value={this.state.password}
+            onChange={this.handleInput("password")}
+          />
+          <br />
 
-          <button onClick={this.handleSubmit}>Sign Up!</button>
+          <button onClick={this.handleSubmit}>Create New Account</button>
         </form>
       </div>
     );

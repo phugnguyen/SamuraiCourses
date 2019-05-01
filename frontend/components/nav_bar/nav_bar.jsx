@@ -3,31 +3,33 @@ import { Link } from "react-router-dom";
 
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
-    <div>
-      <h3>Welcome {currentUser.username}!</h3>
-      <button onClick={logout}>Logout</button>
+    <div className="nav-bar-btns">
+      <Link className="nav-btn">{currentUser.username}</Link>
+      <Link className="nav-btn" onClick={logout}>
+        Log Out
+      </Link>
     </div>
   ) : (
-    <div>
-      <Link className="btn" to="/register">
-        Register
-      </Link>
-      <Link className="btn" to="/login">
+    <div className="nav-bar-btns">
+      <Link className="nav-btn" to="/login">
         Log In
+      </Link>
+      <Link className="nav-btn" to="/register">
+        Register
       </Link>
     </div>
   );
 
   return (
     <header className="nav-bar">
-      <div className="hero-img-frame">
+      <Link className="logo" to="/">
         <img
-          className="hero-img"
-          src="http://images4.fanpop.com/image/photos/24100000/Samurai-Jack-Banner-II-samurai-jack-24107611-2400-300.jpg"
+          className="logo-img"
+          src="https://d29fhpw069ctt2.cloudfront.net/icon/image/49101/preview.svg"
         />
-      </div>
-      <h1 className="logo">SamuraiCourses</h1>
-      <div>{display}</div>
+        SamuraiCourses
+      </Link>
+      {display}
     </header>
   );
 };

@@ -7,7 +7,7 @@ import SignUpContainer from "./session/signup_container";
 import LogInContainer from "./session/login_container";
 
 export default () => (
-  <div>
+  <div className="app">
     <Route path="/" component={NavBarContainer} />
     <Route exact path="/" component={Home} />
     <AuthRoute path="/register" component={SignUpContainer} />

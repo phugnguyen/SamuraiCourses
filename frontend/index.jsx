@@ -4,19 +4,19 @@ import createStore from "./store/store";
 import Root from "./components/root";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById("root");
-  let preloadedState = undefined;
+  let store;
   if (window.currentUser) {
-    preloadedState = {
-      session: {
-        currentUser: window.currentUser
+    const preloadedState = {
+      session: { id: window.currentUser.id },
+      entities: {
+        users: { [window.currentUser.id]: window.currentUser }
       }
     };
+    store = createStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = createStore();
   }
-
-  const store = createStore(preloadedState);
-  window.dispatch = store.dispatch;
-  window.getState = store.getState;
-  window.currentUser = undefined;
+  const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 });
