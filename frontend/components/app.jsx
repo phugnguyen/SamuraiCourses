@@ -10,7 +10,7 @@ export default () => (
   <div>
     <Route path="/" component={NavBarContainer} />
     <Route exact path="/" component={Home} />
-    <AuthRoute path="/signup" component={SignUpContainer} />
+    <AuthRoute path="/register" component={SignUpContainer} />
     <AuthRoute path="/login" component={LogInContainer} />
   </div>
 );
