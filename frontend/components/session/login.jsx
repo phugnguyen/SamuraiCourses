@@ -22,11 +22,22 @@ class Login extends React.Component {
     this.props.login(this.state).then(() => this.props.history.push("/"));
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     // console.log(this.props);
     return (
       <div className="session-form">
         <h2>Log In</h2>
+
         <br />
         <form>
           <label for="username">Username</label>
@@ -50,6 +61,8 @@ class Login extends React.Component {
           />
           <br />
           <button onClick={this.handleSubmit}>Log In</button>
+          <br />
+          {this.renderErrors()}
         </form>
       </div>
     );

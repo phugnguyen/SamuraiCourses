@@ -25,6 +25,15 @@ export default class Signup extends React.Component {
       .then(() => this.props.history.push("/"));
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
   render() {
     return (
       <div className="session-form">
@@ -62,6 +71,8 @@ export default class Signup extends React.Component {
           <br />
 
           <button onClick={this.handleSubmit}>Create New Account</button>
+          <br />
+          {this.renderErrors()}
         </form>
       </div>
     );
