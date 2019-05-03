@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-// school, term, courses, schedules
+// schools, terms, courses, schedules
 
 export default combineReducers({
   courses: "HELLO"
