@@ -12,7 +12,5 @@ export default () => (
     <Modal />
     <Route path="/" component={NavBarContainer} />
     <Route exact path="/" component={Home} />
-    <AuthRoute path="/register" component={SignUpContainer} />
-    <AuthRoute path="/login" component={LogInContainer} />
   </div>
 );
