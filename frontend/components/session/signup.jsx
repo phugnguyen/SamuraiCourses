@@ -38,7 +38,7 @@ export default class Signup extends React.Component {
         <h2>Register</h2>
         <br />
         <form>
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <br />
           <input
             id="username"
@@ -48,7 +48,7 @@ export default class Signup extends React.Component {
           />
           <br />
 
-          <label for="email">Email</label>
+          <label htmlFor="email">Email</label>
           <br />
           <input
             id="email"
@@ -58,7 +58,7 @@ export default class Signup extends React.Component {
           />
           <br />
 
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <br />
           <input
             id="password"

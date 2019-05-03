@@ -40,7 +40,7 @@ class Login extends React.Component {
 
         <br />
         <form>
-          <label for="username">Username</label>
+          <label htmlFor="username">Username</label>
           <br />
 
           <input
@@ -51,7 +51,7 @@ class Login extends React.Component {
           />
 
           <br />
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <br />
           <input
             id="password"
