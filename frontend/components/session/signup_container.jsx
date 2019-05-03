@@ -3,6 +3,7 @@ import { createNewUser } from "../../actions/session";
 import Signup from "./signup";
 import { Link } from "react-router-dom";
 import React from "react";
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = ({ errors }) => {
   return {
@@ -13,7 +14,8 @@ const mapStateToProps = ({ errors }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createNewUser: formUser => dispatch(createNewUser(formUser))
+  createNewUser: formUser => dispatch(createNewUser(formUser)),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(

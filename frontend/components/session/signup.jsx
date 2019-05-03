@@ -20,9 +20,7 @@ export default class Signup extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props
-      .createNewUser(this.state)
-      .then(() => this.props.history.push("/"));
+    this.props.createNewUser(this.state).then(this.props.closeModal);
   }
 
   renderErrors() {
