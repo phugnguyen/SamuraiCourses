@@ -7,6 +7,7 @@ class SchoolIndex extends React.Component {
       school: "",
       term: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(type) {
@@ -19,11 +20,16 @@ class SchoolIndex extends React.Component {
     this.props.fetchSchools();
   }
 
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state);
+  }
+
   render() {
     const { schools } = this.props;
     console.log(this.state);
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h2>Please select your school</h2>
 
         <ul className="school-select-index">
