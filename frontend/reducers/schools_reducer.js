@@ -7,8 +7,6 @@ const schoolRedcuer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_SCHOOLS:
       return action.schools;
-    case RECEIVE_SCHOOL:
-      return action.school;
     default:
       return state;
   }

@@ -13,35 +13,47 @@ class SchoolIndex extends React.Component {
   handleInput(type) {
     return e => {
       this.setState({ [type]: e.target.value });
+      if (type === "school") this.props.fetchSchool(e.target.value);
     };
   }
 
-  componentDidMount() {
-    this.props.fetchSchools();
-  }
-
+  // just a test submit
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state);
   }
 
+  // render errors
+  renderErrors() {}
+
+  componentDidMount() {
+    this.props.fetchSchools();
+  }
+
   render() {
     const { schools } = this.props;
-    console.log(this.state);
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Please select your school</h2>
 
         <ul className="school-select-index">
           {schools.map(school => (
-            <li onClick={this.handleInput("school")} value={school.id}>
+            <li
+              onClick={this.handleInput("school")}
+              value={school.id}
+              key={school.id}
+            >
               {school.name}
             </li>
           ))}
         </ul>
 
+        {/* Test Drop Down Menu */}
         <h2>Please select the term</h2>
         <select value={this.state.term} onChange={this.handleInput("term")}>
+          <option value="" selected="selected">
+            Select Term
+          </option>
           <option value="summer-2019">Summer 2019</option>
           <option value="spring-2019">Spring 2019</option>
           <option value="winter-2019">Winter 2019</option>
@@ -49,6 +61,8 @@ class SchoolIndex extends React.Component {
         </select>
         <br />
         <input type="submit" value="Submit" />
+
+        {/* Render errors if fields are left blank */}
       </form>
     );
   }
