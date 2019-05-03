@@ -33,6 +33,11 @@ class SchoolIndex extends React.Component {
   render() {
     const { schools } = this.props;
     const { terms } = this.props;
+    let selectedDrop = "Please select a term";
+    if (this.state.school === "") {
+      selectedDrop = "Please pick a school first!";
+    }
+
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Please select your school</h2>
@@ -50,10 +55,9 @@ class SchoolIndex extends React.Component {
         </ul>
 
         {/* Test Drop Down Menu */}
-        <h2>Please select the term</h2>
         <select value={this.state.term} onChange={this.handleInput("term")}>
           <option value="" selected="selected">
-            Select Term
+            {selectedDrop}
           </option>
           {terms.map(term => (
             <option value={term}>
