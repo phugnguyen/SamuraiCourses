@@ -32,6 +32,7 @@ class SchoolIndex extends React.Component {
 
   render() {
     const { schools } = this.props;
+    const { terms } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Please select your school</h2>
@@ -54,10 +55,11 @@ class SchoolIndex extends React.Component {
           <option value="" selected="selected">
             Select Term
           </option>
-          <option value="summer-2019">Summer 2019</option>
-          <option value="spring-2019">Spring 2019</option>
-          <option value="winter-2019">Winter 2019</option>
-          <option value="fall-2018">Fall 2018</option>
+          {terms.map(term => (
+            <option value={term}>
+              {term[0].toUpperCase() + term.slice(1)}
+            </option>
+          ))}
         </select>
         <br />
         <input type="submit" value="Submit" />
