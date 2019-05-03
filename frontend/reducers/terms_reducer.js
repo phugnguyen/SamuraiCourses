@@ -3,7 +3,6 @@ import { RECEIVE_TERMS } from "../actions/school_actions";
 
 export default (state = {}, action) => {
   Object.freeze(state);
-  console.log(action);
 
   switch (action.type) {
     case RECEIVE_TERMS:
