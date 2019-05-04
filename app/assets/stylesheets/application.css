@@ -22,6 +22,10 @@ html {
   background-color: blanchedalmond;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -37,24 +41,23 @@ body {
   justify-content: space-between;
   align-content: center;
   vertical-align: middle;
+  position: sticky;
+  top: 0;
 }
 
 header .logo {
   position: relative;
-  top: 15%;
   overflow: hidden;
   text-decoration: none;
   color: whitesmoke;
-  padding-left: 4px;
+  padding-left: 5px;
+  align-self: center;
+  font-size: 22px;
 }
 
-header .logo:hover {
-  color: lightslategrey;
-}
 .logo-img {
-  width: 20px;
+  width: 40px;
   position: relative;
-  top: 10%;
 }
 
 .nav-btn {
@@ -65,7 +68,7 @@ header .logo:hover {
   background-color: #009adc;
   border-radius: 5px;
   text-shadow: none;
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .nav-btn:hover {
@@ -82,10 +85,36 @@ header .logo:hover {
   display: flex;
   flex-direction: column;
   background-color: aliceblue;
-  width: 250px;
-  height: 250px;
   margin: auto;
   border-radius: 5px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.session-form form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.session-form h2 {
+  margin-bottom: 0;
+}
+
+.session-form label {
+  font-size: 16px;
+}
+
+.session-form input {
+  height: 22px;
+  margin-bottom: 7px;
+  width: 99%;
+  padding: 0px;
+}
+
+.session-form button {
+  height: 22px;
+  width: 100%;
 }
 
 .modal-background {
@@ -113,6 +142,8 @@ header .logo:hover {
   width: 66%;
   padding: 5%;
   max-width: 500px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .school-select-form h2 {
@@ -148,6 +179,7 @@ header .logo:hover {
 }
 
 .school-select-form select {
+  min-width: 160px;
   width: 40%;
   align-self: center;
 }

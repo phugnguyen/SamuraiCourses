@@ -35,7 +35,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <h2>Log In</h2>
+        <h2>Log in to SamuraiCourses</h2>
 
         <br />
         <form>

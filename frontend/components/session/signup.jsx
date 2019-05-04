@@ -35,7 +35,7 @@ export default class Signup extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <h2>Register</h2>
+        <h2>Create a Samurai account</h2>
         <br />
         <form>
           <label htmlFor="username">Username</label>

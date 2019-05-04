@@ -25,11 +25,13 @@ export default ({ currentUser, logout, openModal }) => {
   return (
     <header className="nav-bar">
       <Link className="logo" to="/">
+        SamuraiCourses
+      </Link>
+      <Link className="logo-img" to="/">
         <img
           className="logo-img"
           src="https://d29fhpw069ctt2.cloudfront.net/icon/image/49101/preview.svg"
         />
-        SamuraiCourses
       </Link>
       {display}
     </header>
