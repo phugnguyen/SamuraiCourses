@@ -5,7 +5,7 @@ end
 json.terms do 
     @school.terms.each do |term|
         json.set! term.id do 
-            json.extract! term, :season, :year
+            json.extract! term, :season, :year, :id
         end
     end
 end

@@ -65,6 +65,7 @@ header .logo:hover {
   background-color: #009adc;
   border-radius: 5px;
   text-shadow: none;
+  margin-left: 5px;
 }
 
 .nav-btn:hover {
@@ -75,7 +76,6 @@ header .logo:hover {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding-right: 4px;
 }
 
 .session-form {
@@ -103,4 +103,39 @@ header .logo:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.school-select-form {
+  display: flex;
+  background-color: aliceblue;
+  flex-direction: column;
+  margin: auto;
+  width: 66%;
+}
+
+.school-select-form h2 {
+  align-self: center;
+}
+
+.school-select-form ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.school-select-form li {
+  list-style: none;
+  padding: 5px;
+  width: 40%;
+  color: white;
+  background: #009adc;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.school-select-form li:hover {
+  background: lightslategrey;
 }

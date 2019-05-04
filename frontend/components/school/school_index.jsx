@@ -39,7 +39,7 @@ class SchoolIndex extends React.Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="school-select-form" onSubmit={this.handleSubmit}>
         <h2>Please select your school</h2>
 
         <ul className="school-select-index">
@@ -54,13 +54,12 @@ class SchoolIndex extends React.Component {
           ))}
         </ul>
 
-        {/* Test Drop Down Menu */}
         <select value={this.state.term} onChange={this.handleInput("term")}>
           <option value="" selected="selected">
             {selectedDrop}
           </option>
           {terms.map(term => (
-            <option value={term}>
+            <option key={term.id} value={term}>
               {term[0].toUpperCase() + term.slice(1)}
             </option>
           ))}
