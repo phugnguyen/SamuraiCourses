@@ -112,6 +112,7 @@ header .logo:hover {
   margin: auto;
   width: 66%;
   padding: 5%;
+  max-width: 500px;
 }
 
 .school-select-form h2 {
@@ -137,12 +138,13 @@ header .logo:hover {
   border-radius: 5px;
 }
 
-.school-select-form li:active {
-  background: red;
+.school-select-form .liActive {
+  background: lightslategrey;
 }
 
 .school-select-form li:hover {
   background: lightslategrey;
+  cursor: pointer;
 }
 
 .school-select-form select {

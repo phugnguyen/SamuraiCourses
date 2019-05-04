@@ -48,6 +48,7 @@ class SchoolIndex extends React.Component {
               onClick={this.handleInput("school")}
               value={school.id}
               key={school.id}
+              className={this.state.school === school.id ? "liActive" : ""}
             >
               {school.name}
             </li>
@@ -55,7 +56,7 @@ class SchoolIndex extends React.Component {
         </ul>
 
         <select value={this.state.term} onChange={this.handleInput("term")}>
-          <option value="" selected="selected">
+          <option key="0" defaultValue>
             {selectedDrop}
           </option>
           {terms.map(term => (
