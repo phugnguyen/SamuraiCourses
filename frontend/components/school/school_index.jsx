@@ -65,7 +65,7 @@ class SchoolIndex extends React.Component {
           ))}
         </select>
         <br />
-        <input type="submit" value="Submit" />
+        <button>Submit</button>
 
         {/* Render errors if fields are left blank */}
       </form>

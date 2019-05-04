@@ -111,6 +111,7 @@ header .logo:hover {
   flex-direction: column;
   margin: auto;
   width: 66%;
+  padding: 5%;
 }
 
 .school-select-form h2 {
@@ -136,6 +137,20 @@ header .logo:hover {
   border-radius: 5px;
 }
 
+.school-select-form li:active {
+  background: red;
+}
+
 .school-select-form li:hover {
   background: lightslategrey;
+}
+
+.school-select-form select {
+  width: 40%;
+  align-self: center;
+}
+
+.school-select-form button {
+  width: 40%;
+  align-self: center;
 }
