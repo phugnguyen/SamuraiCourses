@@ -58,6 +58,7 @@ header .logo {
 .logo-img {
   width: 40px;
   position: relative;
+  right: 7px;
 }
 
 .nav-btn {
@@ -179,12 +180,13 @@ header .logo {
 }
 
 .school-select-form select {
-  min-width: 160px;
-  width: 40%;
+  width: 165px;
   align-self: center;
+  height: 22px;
 }
 
 .school-select-form button {
-  width: 40%;
+  width: 165px;
   align-self: center;
+  height: 22px;
 }
