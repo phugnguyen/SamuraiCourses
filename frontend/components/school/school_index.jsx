@@ -66,7 +66,10 @@ class SchoolIndex extends React.Component {
           ))}
         </select>
         <br />
-        <button>Submit</button>
+        {/* <button disabled={this.state.school && this.state.term ? "" : disabled}> */}
+        <button disabled={this.state.school && this.state.term ? false : true}>
+          Submit
+        </button>
 
         {/* Render errors if fields are left blank */}
       </form>

@@ -73,7 +73,7 @@ header .logo {
 }
 
 .nav-btn:hover {
-  background-color: lightslategrey;
+  background-color: #00618a;
 }
 
 .nav-bar-btns {
@@ -171,11 +171,11 @@ header .logo {
 }
 
 .school-select-form .liActive {
-  background: lightslategrey;
+  background: #00618a;
 }
 
 .school-select-form li:hover {
-  background: lightslategrey;
+  background: #00618a;
   cursor: pointer;
 }
 
