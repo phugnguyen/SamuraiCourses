@@ -56,9 +56,7 @@ class SchoolIndex extends React.Component {
         </ul>
 
         <select value={this.state.term} onChange={this.handleInput("term")}>
-          <option key="0" defaultValue>
-            {selectedDrop}
-          </option>
+          <option value="">{selectedDrop}</option>
           {terms.map(term => (
             <option key={term.id} value={term}>
               {term[0].toUpperCase() + term.slice(1)}
