@@ -56,7 +56,9 @@ class SchoolIndex extends React.Component {
         </ul>
 
         <select value={this.state.term} onChange={this.handleInput("term")}>
-          <option value="">{selectedDrop}</option>
+          <option key="123" value="">
+            {selectedDrop}
+          </option>
           {terms.map(term => (
             <option key={term.id} value={term}>
               {term[0].toUpperCase() + term.slice(1)}
@@ -64,12 +66,9 @@ class SchoolIndex extends React.Component {
           ))}
         </select>
         <br />
-        {/* <button disabled={this.state.school && this.state.term ? "" : disabled}> */}
         <button disabled={this.state.school && this.state.term ? false : true}>
           Submit
         </button>
-
-        {/* Render errors if fields are left blank */}
       </form>
     );
   }
