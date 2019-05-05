@@ -60,7 +60,7 @@ class SchoolIndex extends React.Component {
           value={this.state.term}
           onChange={this.handleInput("term")}
         >
-          <option key="123" value="">
+          <option key={Math.random()} value="">
             {selectedDrop}
           </option>
           {terms.map(term => (
