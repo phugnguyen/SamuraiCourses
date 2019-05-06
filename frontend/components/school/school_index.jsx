@@ -14,6 +14,7 @@ class SchoolIndex extends React.Component {
     return e => {
       this.setState({ [type]: e.target.value });
       if (type === "school") this.props.fetchSchool(e.target.value);
+      if (type === "term") this.props.receiveTerm(e.target.value);
     };
   }
 
