@@ -13,4 +13,5 @@
 class Term < ApplicationRecord
   validates :season, :year, :school_id, presence: true
   belongs_to :school
+  has_many :courses
 end
