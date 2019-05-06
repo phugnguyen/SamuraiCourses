@@ -8,14 +8,14 @@ import {
 } from "../../actions/school_actions";
 
 const mSTP = state => {
-  let arr = [];
-  Object.values(state.entities.terms).map(term =>
-    arr.push(term.season + " " + term.year)
-  );
+  // let arr = [];
+  // Object.values(state.entities.terms).map(term =>
+  //   arr.push(term.season + " " + term.year)
+  // );
 
   return {
     schools: Object.values(state.entities.schools),
-    terms: arr
+    terms: Object.values(state.entities.terms)
   };
 };
 

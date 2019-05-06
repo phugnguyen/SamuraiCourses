@@ -64,7 +64,6 @@ terms.each do |term|
                 end_time: s + duration.sample,
                 days: days.sample
             })
-
         end
     end
 end

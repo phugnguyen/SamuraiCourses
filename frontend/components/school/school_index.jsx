@@ -62,8 +62,9 @@ class SchoolIndex extends React.Component {
             {selectedDrop}
           </option>
           {terms.map(term => (
-            <option key={Math.random()} value={term}>
-              {term[0].toUpperCase() + term.slice(1)}
+            <option key={Math.random()} value={term.id}>
+              {/* {term[0].toUpperCase() + term.slice(1)} */}
+              {term.season + " " + term.year}
             </option>
           ))}
         </select>

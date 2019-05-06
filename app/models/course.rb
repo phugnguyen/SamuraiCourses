@@ -15,6 +15,7 @@
 #
 
 class Course < ApplicationRecord
+  validates :department, :code, :course_number, :term_id, :start_time, :end_time, :days, presence: true
   belongs_to :term
   has_one :school,
     through: :term,
