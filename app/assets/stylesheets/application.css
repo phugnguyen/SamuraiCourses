@@ -51,6 +51,7 @@ header .logo {
 
 .logo-img {
   width: 40px;
+  transform: translateX(-25%);
 }
 
 .nav-btn {

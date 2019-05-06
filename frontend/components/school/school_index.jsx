@@ -53,7 +53,7 @@ class SchoolIndex extends React.Component {
         </ul>
 
         <select
-          key="select"
+          // key="select"
           value={this.state.term}
           onChange={this.handleInput("term")}
         >
