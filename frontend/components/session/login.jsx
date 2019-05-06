@@ -60,7 +60,7 @@ class Login extends React.Component {
           />
           <br />
           <button onClick={this.handleSubmit}>Log In</button>
-          <br />
+
           {this.renderErrors()}
         </form>
       </div>

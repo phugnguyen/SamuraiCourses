@@ -50,15 +50,13 @@ header .logo {
   overflow: hidden;
   text-decoration: none;
   color: whitesmoke;
-  padding-left: 5px;
   align-self: center;
   font-size: 22px;
 }
 
 .logo-img {
   width: 40px;
-  position: relative;
-  right: 7px;
+  /* position: relative; */
 }
 
 .nav-btn {

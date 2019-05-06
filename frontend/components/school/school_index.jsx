@@ -23,9 +23,6 @@ class SchoolIndex extends React.Component {
     console.log(this.state);
   }
 
-  // render errors
-  renderErrors() {}
-
   componentDidMount() {
     this.props.fetchSchools();
   }

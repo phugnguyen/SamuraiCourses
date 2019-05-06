@@ -69,7 +69,7 @@ export default class Signup extends React.Component {
           <br />
 
           <button onClick={this.handleSubmit}>Create New Account</button>
-          <br />
+
           {this.renderErrors()}
         </form>
       </div>
