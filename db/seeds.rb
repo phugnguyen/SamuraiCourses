@@ -31,14 +31,43 @@ d = School.create!({
 
 schools = [a,b,c,d]
 seasons = %w(Winter Spring Summer Fall)
+terms = []
 
 schools.each do |school|
     seasons.each do |season|
-        Term.create!({
+        terms << Term.create!({
             season: season,
             year: "2019",
             school_id: school.id
         })
     end
 end
+
+codes = %w(KOR CMPSC MATH PHIL)
+departments = %w(Korean Computer_Science Mathematics Philosophy)
+days = %w(MWF TR)
+duration = [50, 115]
+
+start_times = (8..13).to_a.map{ |el| el*100 }
+
+terms.each do |term|
+    codes.each_with_index do |code, idx|
+        randNum = rand(1..10)
+        4.times do 
+            s = start_times.sample
+            Course.create!({
+                department: departments[idx],
+                code: code,
+                course_number: randNum,
+                term_id: term.id,
+                start_time: s,
+                end_time: s + duration.sample,
+                days: days.sample
+            })
+
+        end
+    end
+end
+
+
 
