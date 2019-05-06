@@ -36,13 +36,8 @@ body {
 .nav-bar {
   background-color: #026aa7;
   height: 40px;
-  color: whitesmoke;
   display: flex;
   justify-content: space-between;
-  align-content: center;
-  vertical-align: middle;
-  position: sticky;
-  top: 0;
 }
 
 header .logo {
@@ -56,7 +51,6 @@ header .logo {
 
 .logo-img {
   width: 40px;
-  /* position: relative; */
 }
 
 .nav-btn {
@@ -67,7 +61,7 @@ header .logo {
   background-color: #009adc;
   border-radius: 5px;
   text-shadow: none;
-  margin-right: 5px;
+  white-space: nowrap;
 }
 
 .nav-btn:hover {
@@ -138,8 +132,8 @@ header .logo {
   background-color: aliceblue;
   flex-direction: column;
   margin: auto;
-  width: 66%;
-  padding: 5%;
+  /* width: 66%; */
+  /* padding: 5%; */
   max-width: 500px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -163,7 +157,7 @@ header .logo {
   width: 40%;
   color: white;
   background: #009adc;
-  margin-right: 5px;
+  /* margin-right: 5px; */
   margin-bottom: 5px;
   border-radius: 5px;
 }
