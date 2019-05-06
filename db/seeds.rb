@@ -29,79 +29,16 @@ d = School.create!({
     name: "CSU San Francisco"
 })
 
-Term.create!({
-    season: "Winter",
-    year: "2019",
-    school_id:a.id
-})
+schools = [a,b,c,d]
+seasons = %w(Winter Spring Summer Fall)
 
-Term.create!({
-    season: "Spring",
-    year: "2019",
-    school_id:a.id
-})
-Term.create!({
-    season: "Summer",
-    year: "2019",
-    school_id:a.id
-})
-Term.create!({
-    season: "Fall",
-    year: "2019",
-    school_id:a.id
-})
-Term.create!({
-    season: "Winter",
-    year: "2019",
-    school_id: b.id
-})
-Term.create!({
-    season: "Spring",
-    year: "2019",
-    school_id: b.id
-})
-Term.create!({
-    season: "Summer",
-    year: "2019",
-    school_id: b.id
-})
-Term.create!({
-    season: "Fall",
-    year: "2019",
-    school_id: b.id
-})
-Term.create!({
-    season: "Winter",
-    year: "2019",
-    school_id: c.id
-})
-Term.create!({
-    season: "Spring",
-    year: "2019",
-    school_id: c.id
-})
-Term.create!({
-    season: "Summer",
-    year: "2019",
-    school_id: c.id
-})
-Term.create!({
-    season: "Fall",
-    year: "2019",
-    school_id: c.id
-})
-Term.create!({
-    season: "Summer",
-    year: "2019",
-    school_id: d.id
-})
-Term.create!({
-    season: "Fall",
-    year: "2019",
-    school_id: d.id
-})
-Term.create!({
-    season: "Spring",
-    year: "2019",
-    school_id: d.id
-})
+schools.each do |school|
+    seasons.each do |season|
+        Term.create!({
+            season: season,
+            year: "2019",
+            school_id: school.id
+        })
+    end
+end
+
