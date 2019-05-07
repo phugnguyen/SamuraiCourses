@@ -1,3 +1,5 @@
+// code from https://alligator.io/react/react-autocomplete/
+
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 
@@ -44,6 +46,7 @@ class Autocomplete extends Component {
       showSuggestions: true,
       userInput: e.currentTarget.value
     });
+    console.log(this.state);
   };
 
   // Event fired when the user clicks on a suggestion
@@ -136,9 +139,11 @@ class Autocomplete extends Component {
       <Fragment>
         <input
           type="text"
-          onChange={onChange}
+          //   onChange={onChange}
+          onChange={this.props.handleInput}
           onKeyDown={onKeyDown}
-          value={userInput}
+          value={this.props.value}
+          placeholder={this.props.placeHolder}
         />
         {suggestionsListComponent}
       </Fragment>

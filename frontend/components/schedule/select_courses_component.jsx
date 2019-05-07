@@ -14,6 +14,7 @@ export default class SelectCourses extends React.Component {
   handleInput(type) {
     return e => {
       this.setState({ [type]: e.target.value });
+      console.log(this.state);
     };
   }
 
@@ -59,6 +60,30 @@ export default class SelectCourses extends React.Component {
             "Tail",
             "Wetlands"
           ]}
+          // must pass down to the child component,
+          // if pass down functions it can affet the state
+          // of the parent component
+          placeHolder="DEPARTMENT"
+          handleInput={this.handleInput("department")}
+          value={this.state.department}
+        />
+
+        <Autocomplete
+          suggestions={[
+            "Alligator",
+            "Bask",
+            "Crocodilian",
+            "Death Roll",
+            "Eggs",
+            "Jaws",
+            "Reptile",
+            "Solitary",
+            "Tail",
+            "Wetlands"
+          ]}
+          placeHolder="COURSE_NUMBER"
+          handleInput={this.handleInput("course_number")}
+          value={this.state.course_number}
         />
 
         <button onClick={this.handleGenerate}>Generate Schedules</button>
