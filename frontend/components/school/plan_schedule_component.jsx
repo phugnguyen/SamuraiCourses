@@ -8,6 +8,9 @@ class PlanSchedule extends React.Component {
       <div className="plan-schedule-component">
         <SchoolIndexContainer />
         <SelectCoursesContainer />
+        {/* CheckBoxContainer */}
+        {/* MyCoursesContainer */}
+        {/* GeneratedSchedulesContainer */}
       </div>
     );
   }

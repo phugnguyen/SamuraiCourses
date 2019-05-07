@@ -1,4 +1,6 @@
 import React from "react";
+import AutoComplete from "../autocomplete/autocomplete";
+import Autocomplete from "../autocomplete/autocomplete";
 
 export default class SelectCourses extends React.Component {
   constructor(props) {
@@ -42,6 +44,21 @@ export default class SelectCourses extends React.Component {
           onChange={this.handleInput("course_number")}
           value={this.state.course_number}
           placeholder="e.g. 3"
+        />
+
+        <Autocomplete
+          suggestions={[
+            "Alligator",
+            "Bask",
+            "Crocodilian",
+            "Death Roll",
+            "Eggs",
+            "Jaws",
+            "Reptile",
+            "Solitary",
+            "Tail",
+            "Wetlands"
+          ]}
         />
 
         <button onClick={this.handleGenerate}>Generate Schedules</button>
