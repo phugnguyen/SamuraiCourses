@@ -15,7 +15,13 @@ class Api::CoursesController < ApplicationController
       code: params[:code],
       course_number: params[:courseNumber] 
       )
+    if @course
+      # render json: ["found courses"]
+      # debugger
       render :show
+    else
+      render json: ["DEEZ ERRORS"]
+    end
   end
 
 end
