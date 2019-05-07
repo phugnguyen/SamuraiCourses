@@ -1,0 +1,1 @@
+json.extract! course, :id, :department, :code, :course_number, :term_id, :start_time, :end_time, :days
