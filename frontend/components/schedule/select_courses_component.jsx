@@ -26,12 +26,16 @@ export default class SelectCourses extends React.Component {
     console.log(this.state);
   }
 
-  // change to this later
-  // componentDidMount() {
-  //   this.props.fetchCourses(this.props.termId);
-  // }
-
   render() {
+    const { courses } = this.props;
+    let codes = [];
+    let departments = [];
+    courses.map(course => {
+      codes.push(course.code);
+      departments.push(course.department);
+    });
+    const searchParams = Array.from(new Set(codes.concat(departments)));
+
     return (
       <div className="select-course-form">
         <h2>Select your courses!</h2>
@@ -40,18 +44,7 @@ export default class SelectCourses extends React.Component {
         <label htmlFor="department">Department:</label>
 
         <Autocomplete
-          suggestions={[
-            "Alligator",
-            "Bask",
-            "Crocodilian",
-            "Death Roll",
-            "Eggs",
-            "Jaws",
-            "Reptile",
-            "Solitary",
-            "Tail",
-            "Wetlands"
-          ]}
+          suggestions={searchParams}
           // must pass down to the child component,
           // if pass down functions it can affet the state
           // of the parent component
