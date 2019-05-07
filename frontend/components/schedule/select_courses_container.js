@@ -11,9 +11,11 @@ const mSTP = state => {
   };
 };
 
-const mDTP = dispatch => ({
-  fetchCourses: termId => dispatch(fetchCourses(termId))
-});
+const mDTP = dispatch => {
+  return {
+    fetchCourses: termId => dispatch(fetchCourses(termId))
+  };
+};
 
 export default connect(
   mSTP,

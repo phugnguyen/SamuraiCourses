@@ -1,5 +1,6 @@
 import React from "react";
 import Autocomplete from "../autocomplete/autocomplete";
+import { Link } from "react-router-dom";
 
 export default class SelectCourses extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export default class SelectCourses extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleGenerate = this.handleGenerate.bind(this);
+    this.handleFindCourse = this.handleFindCourse.bind(this);
   }
 
   handleInput(type, value) {
@@ -23,6 +25,10 @@ export default class SelectCourses extends React.Component {
   //  Place holder
   handleGenerate() {
     console.log("You're generating my schedules !!");
+    console.log(this.state);
+  }
+
+  handleFindCourse() {
     console.log(this.state);
   }
 
@@ -44,14 +50,11 @@ export default class SelectCourses extends React.Component {
     );
 
     const courseNumberSearchParams = Array.from(new Set(course_numbers));
-
     return (
       <div className="select-course-form">
         <h2>Select your courses!</h2>
         <h3>Start by adding a course</h3>
-
         <label htmlFor="department">Department:</label>
-
         <Autocomplete
           suggestions={departmentSearchParams}
           // must pass down to the child component,
@@ -69,8 +72,12 @@ export default class SelectCourses extends React.Component {
           handleInput={this.handleInput}
           id="course_number"
         />
-
-        <button onClick={this.handleGenerate}>Generate Schedules</button>
+        <Link to="#" className="nav-btn" onClick={this.handleFindCourse}>
+          Find Courses!
+        </Link>
+        <Link to="#" className="nav-btn" onClick={this.handleGenerate}>
+          Generate Schedules
+        </Link>
       </div>
     );
   }

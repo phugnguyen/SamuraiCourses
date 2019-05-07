@@ -105,6 +105,10 @@ class Autocomplete extends Component {
     }
   };
 
+  // onClickInput = () => {
+  //   this.setState({ activeSuggestion: 0, showSuggestions: true });
+  // };
+
   render() {
     const {
       onChange,
@@ -158,6 +162,8 @@ class Autocomplete extends Component {
           value={userInput}
           placeholder={this.props.placeHolder}
           id={this.props.id}
+          // onClick={this.onClickInput}
+          autoComplete="off"
         />
         {suggestionsListComponent}
       </div>
