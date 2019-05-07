@@ -79,7 +79,8 @@ class Autocomplete extends Component {
           activeSuggestion: 0,
           showSuggestions: false,
           userInput: filteredSuggestions[activeSuggestion]
-        }, // add callback to update parent state
+        },
+        // add callback to update parent state
         this.props.handleInput(
           this.props.id,
           filteredSuggestions[activeSuggestion]
@@ -149,7 +150,7 @@ class Autocomplete extends Component {
     }
 
     return (
-      <Fragment>
+      <div className="autocomplete-list">
         <input
           type="text"
           onChange={onChange}
@@ -159,7 +160,7 @@ class Autocomplete extends Component {
           id={this.props.id}
         />
         {suggestionsListComponent}
-      </Fragment>
+      </div>
     );
   }
 }

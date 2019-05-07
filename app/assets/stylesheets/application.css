@@ -118,7 +118,6 @@ header .logo {
   right: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 10;
 }
 
 .modal-child {
@@ -186,6 +185,10 @@ header .logo {
 
 /* autocomplete styling */
 
+.autocomplete-list {
+  position: relative;
+}
+
 .suggestions {
   border: 1px solid #999;
   border-top-width: 0;
@@ -195,12 +198,15 @@ header .logo {
   overflow-y: auto;
   padding-left: 0;
   width: calc(300px + 1rem);
-  z-index: 10;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  z-index: 5;
+  background-color: aliceblue;
 }
 
 .suggestions li {
   padding: 0.5rem;
-  z-index: 10;
 }
 
 .suggestion-active,
@@ -209,12 +215,13 @@ header .logo {
   color: aliceblue;
   cursor: pointer;
   font-weight: 700;
-  z-index: 10;
+  /* position: absolute;
+  top: 0;
+  right: 0; */
 }
 
 .suggestions li:not(:last-of-type) {
   border-bottom: 1px solid #999;
-  z-index: 10;
 }
 
 .select-course-form input {
