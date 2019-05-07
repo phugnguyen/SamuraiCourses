@@ -47,22 +47,24 @@ class Autocomplete extends Component {
         showSuggestions: true,
         userInput: e.currentTarget.value
       },
+      // add callback to update parent state
       this.props.handleInput(this.props.id, e.currentTarget.value)
     );
-    // this.props.handleInput("department", e.currentTarget.value);
-    // this.props.handleInput("department", e.currentTarget.value)();
-    // console.log(this.props.handleInput);
   };
 
   // Event fired when the user clicks on a suggestion
   onClick = e => {
     // Update the user input and reset the rest of the state
-    this.setState({
-      activeSuggestion: 0,
-      filteredSuggestions: [],
-      showSuggestions: false,
-      userInput: e.currentTarget.innerText
-    });
+    this.setState(
+      {
+        activeSuggestion: 0,
+        filteredSuggestions: [],
+        showSuggestions: false,
+        userInput: e.currentTarget.innerText
+      },
+      // add callback to update parent state
+      this.props.handleInput(this.props.id, e.currentTarget.innerText)
+    );
   };
 
   // Event fired when the user presses a key down
@@ -145,7 +147,6 @@ class Autocomplete extends Component {
         <input
           type="text"
           onChange={onChange}
-          //   onChange={this.props.handleInput}
           onKeyDown={onKeyDown}
           value={userInput}
           placeholder={this.props.placeHolder}

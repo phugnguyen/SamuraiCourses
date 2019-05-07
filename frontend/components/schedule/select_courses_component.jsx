@@ -1,5 +1,4 @@
 import React from "react";
-import AutoComplete from "../autocomplete/autocomplete";
 import Autocomplete from "../autocomplete/autocomplete";
 
 export default class SelectCourses extends React.Component {
@@ -11,6 +10,7 @@ export default class SelectCourses extends React.Component {
     };
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleGenerate = this.handleGenerate.bind(this);
   }
 
   handleInput(type, value) {
@@ -23,6 +23,7 @@ export default class SelectCourses extends React.Component {
   //  Place holder
   handleGenerate() {
     console.log("You're generating my schedules !!");
+    console.log(this.state);
   }
 
   render() {
@@ -32,22 +33,6 @@ export default class SelectCourses extends React.Component {
         <h3>Start by adding a course</h3>
 
         <label htmlFor="department">Department:</label>
-        {/* <input
-          id="department"
-          type="text"
-          onChange={this.handleInput("department")}
-          value={this.state.department}
-          placeholder="e.g. PHIL or philosophy"
-        /> */}
-
-        <label htmlFor="course_number">Course Number:</label>
-        {/* <input
-          id="course_number"
-          type="text"
-          onChange={this.handleInput("course_number")}
-          value={this.state.course_number}
-          placeholder="e.g. 3"
-        /> */}
 
         <Autocomplete
           suggestions={[
@@ -71,6 +56,7 @@ export default class SelectCourses extends React.Component {
           id="department"
         />
 
+        <label htmlFor="course_number">Course Number:</label>
         <Autocomplete
           suggestions={[
             "Alligator",
