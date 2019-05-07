@@ -15,7 +15,10 @@ export default class SelectCourses extends React.Component {
     };
   }
 
-  handleGenerate() {}
+  //  Place holder
+  handleGenerate() {
+    console.log("You're generating my schedules !!");
+  }
 
   render() {
     return (
@@ -31,6 +34,7 @@ export default class SelectCourses extends React.Component {
           value={this.state.department}
           placeholder="e.g. PHIL or philosophy"
         />
+
         <label htmlFor="course_number">Course Number:</label>
         <input
           id="course_number"
@@ -39,6 +43,8 @@ export default class SelectCourses extends React.Component {
           value={this.state.course_number}
           placeholder="e.g. 3"
         />
+
+        <button onClick={this.handleGenerate}>Generate Schedules</button>
       </div>
     );
   }
