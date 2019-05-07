@@ -6,13 +6,13 @@ import Home from "./home/home";
 import SignUpContainer from "./session/signup_container";
 import LogInContainer from "./session/login_container";
 import Modal from "./modal/modal";
-import selectSchoolComponent from "./school/plan_schedule_component";
+import PlanSchoolComponent from "./school/plan_schedule_component";
 
 export default () => (
   <div className="app">
     <Modal />
     <Route path="/" component={NavBarContainer} />
-    <Route path="/selectSchool" component={selectSchoolComponent} />
+    <Route path="/planSchedule" component={PlanSchoolComponent} />
     <Route exact path="/" component={Home} />
   </div>
 );
