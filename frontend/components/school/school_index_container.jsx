@@ -7,6 +7,8 @@ import {
   receiveTerm
 } from "../../actions/school_actions";
 
+import { fetchCourses, fetchCourse } from "../../actions/course_actions";
+
 const mSTP = state => {
   // let arr = [];
   // Object.values(state.entities.terms).map(term =>
@@ -22,7 +24,8 @@ const mSTP = state => {
 const mDTP = dispatch => ({
   fetchSchools: () => dispatch(fetchSchools()),
   fetchSchool: id => dispatch(fetchSchool(id)),
-  receiveTerm: term => dispatch(receiveTerm(term))
+  receiveTerm: term => dispatch(receiveTerm(term)),
+  fetchCourses: termId => dispatch(fetchCourses(termId))
 });
 
 export default connect(

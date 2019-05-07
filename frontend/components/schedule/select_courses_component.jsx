@@ -26,6 +26,11 @@ export default class SelectCourses extends React.Component {
     console.log(this.state);
   }
 
+  // change to this later
+  // componentDidMount() {
+  //   this.props.fetchCourses(this.props.termId);
+  // }
+
   render() {
     return (
       <div className="select-course-form">

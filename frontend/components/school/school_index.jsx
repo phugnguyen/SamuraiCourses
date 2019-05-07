@@ -22,6 +22,7 @@ class SchoolIndex extends React.Component {
     event.preventDefault();
     // if (type === "term")
     this.props.receiveTerm(this.state.term);
+    this.props.fetchCourses(this.state.term);
     // console.log(this.state);
     // redirect to /planSchedule
   }

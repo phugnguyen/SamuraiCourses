@@ -6,7 +6,8 @@ import { fetchCourses, fetchCourse } from "../../actions/course_actions";
 const mSTP = state => {
   return {
     schoolId: state.session.schoolId,
-    termId: state.session.term
+    termId: state.session.term,
+    courses: Object.values(state.entities.courses)
   };
 };
 
