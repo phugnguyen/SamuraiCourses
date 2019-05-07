@@ -28,13 +28,22 @@ export default class SelectCourses extends React.Component {
 
   render() {
     const { courses } = this.props;
+    const { department } = this.state;
     let codes = [];
     let departments = [];
+    let course_numbers = [];
     courses.map(course => {
       codes.push(course.code);
       departments.push(course.department);
+      if (department === course.department || department === course.code) {
+        course_numbers.push(course.course_number);
+      }
     });
-    const searchParams = Array.from(new Set(codes.concat(departments)));
+    const departmentSearchParams = Array.from(
+      new Set(codes.concat(departments))
+    );
+
+    const courseNumberSearchParams = Array.from(new Set(course_numbers));
 
     return (
       <div className="select-course-form">
@@ -44,33 +53,20 @@ export default class SelectCourses extends React.Component {
         <label htmlFor="department">Department:</label>
 
         <Autocomplete
-          suggestions={searchParams}
+          suggestions={departmentSearchParams}
           // must pass down to the child component,
           // if pass down functions it can affet the state
           // of the parent component
           placeHolder="DEPARTMENT"
           handleInput={this.handleInput}
-          value={this.state.department}
           id="department"
         />
 
         <label htmlFor="course_number">Course Number:</label>
         <Autocomplete
-          suggestions={[
-            "Alligator",
-            "Bask",
-            "Crocodilian",
-            "Death Roll",
-            "Eggs",
-            "Jaws",
-            "Reptile",
-            "Solitary",
-            "Tail",
-            "Wetlands"
-          ]}
+          suggestions={courseNumberSearchParams}
           placeHolder="COURSE_NUMBER"
           handleInput={this.handleInput}
-          value={this.state.course_number}
           id="course_number"
         />
 
