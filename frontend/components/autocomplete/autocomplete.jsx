@@ -40,13 +40,18 @@ class Autocomplete extends Component {
 
     // Update the user input and filtered suggestions, reset the active
     // suggestion and make sure the suggestions are shown
-    this.setState({
-      activeSuggestion: 0,
-      filteredSuggestions,
-      showSuggestions: true,
-      userInput: e.currentTarget.value
-    });
-    console.log(this.state);
+    this.setState(
+      {
+        activeSuggestion: 0,
+        filteredSuggestions,
+        showSuggestions: true,
+        userInput: e.currentTarget.value
+      },
+      this.props.handleInput(this.props.id, e.currentTarget.value)
+    );
+    // this.props.handleInput("department", e.currentTarget.value);
+    // this.props.handleInput("department", e.currentTarget.value)();
+    // console.log(this.props.handleInput);
   };
 
   // Event fired when the user clicks on a suggestion
@@ -109,7 +114,7 @@ class Autocomplete extends Component {
     if (showSuggestions && userInput) {
       if (filteredSuggestions.length) {
         suggestionsListComponent = (
-          <ul class="suggestions">
+          <ul className="suggestions">
             {filteredSuggestions.map((suggestion, index) => {
               let className;
 
@@ -128,7 +133,7 @@ class Autocomplete extends Component {
         );
       } else {
         suggestionsListComponent = (
-          <div class="no-suggestions">
+          <div className="no-suggestions">
             <em>No suggestions, you're on your own!</em>
           </div>
         );
@@ -139,11 +144,12 @@ class Autocomplete extends Component {
       <Fragment>
         <input
           type="text"
-          //   onChange={onChange}
-          onChange={this.props.handleInput}
+          onChange={onChange}
+          //   onChange={this.props.handleInput}
           onKeyDown={onKeyDown}
-          value={this.props.value}
+          value={userInput}
           placeholder={this.props.placeHolder}
+          id={this.props.id}
         />
         {suggestionsListComponent}
       </Fragment>

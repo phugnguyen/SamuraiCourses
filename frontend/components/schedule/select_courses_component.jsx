@@ -9,11 +9,13 @@ export default class SelectCourses extends React.Component {
       department: "",
       course_number: ""
     };
+
+    this.handleInput = this.handleInput.bind(this);
   }
 
-  handleInput(type) {
+  handleInput(type, value) {
     return e => {
-      this.setState({ [type]: e.target.value });
+      this.setState({ [type]: value });
       console.log(this.state);
     };
   }
@@ -30,22 +32,22 @@ export default class SelectCourses extends React.Component {
         <h3>Start by adding a course</h3>
 
         <label htmlFor="department">Department:</label>
-        <input
+        {/* <input
           id="department"
           type="text"
           onChange={this.handleInput("department")}
           value={this.state.department}
           placeholder="e.g. PHIL or philosophy"
-        />
+        /> */}
 
         <label htmlFor="course_number">Course Number:</label>
-        <input
+        {/* <input
           id="course_number"
           type="text"
           onChange={this.handleInput("course_number")}
           value={this.state.course_number}
           placeholder="e.g. 3"
-        />
+        /> */}
 
         <Autocomplete
           suggestions={[
@@ -64,8 +66,9 @@ export default class SelectCourses extends React.Component {
           // if pass down functions it can affet the state
           // of the parent component
           placeHolder="DEPARTMENT"
-          handleInput={this.handleInput("department")}
+          handleInput={this.handleInput}
           value={this.state.department}
+          id="department"
         />
 
         <Autocomplete
@@ -82,8 +85,9 @@ export default class SelectCourses extends React.Component {
             "Wetlands"
           ]}
           placeHolder="COURSE_NUMBER"
-          handleInput={this.handleInput("course_number")}
+          handleInput={this.handleInput}
           value={this.state.course_number}
+          id="course_number"
         />
 
         <button onClick={this.handleGenerate}>Generate Schedules</button>
