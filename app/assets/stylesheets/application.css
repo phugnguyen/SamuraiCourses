@@ -183,3 +183,42 @@ header .logo {
   align-self: center;
   height: 22px;
 }
+
+/* autocomplete styling */
+
+.suggestions {
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 143px;
+  overflow-y: auto;
+  padding-left: 0;
+  width: calc(300px + 1rem);
+  z-index: 10;
+}
+
+.suggestions li {
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.suggestion-active,
+.suggestions li:hover {
+  background-color: #009adc;
+  color: aliceblue;
+  cursor: pointer;
+  font-weight: 700;
+  z-index: 10;
+}
+
+.suggestions li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+  z-index: 10;
+}
+
+.select-course-form input {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  width: 300px;
+}

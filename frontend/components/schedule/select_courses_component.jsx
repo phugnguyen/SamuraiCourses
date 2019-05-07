@@ -61,7 +61,7 @@ export default class SelectCourses extends React.Component {
           handleInput={this.handleInput}
           id="department"
         />
-
+        <br />
         <label htmlFor="course_number">Course Number:</label>
         <Autocomplete
           suggestions={courseNumberSearchParams}
