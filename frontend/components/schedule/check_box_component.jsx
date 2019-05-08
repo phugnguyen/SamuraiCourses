@@ -13,10 +13,10 @@ export default class CheckBox extends React.Component {
   handleSave() {}
 
   handleChecked(e) {
-    const dept = this.props.department;
-    const value = e.target.value;
+    const { department } = this.props;
+    const { value } = e.target;
 
-    let arr = this.state[dept] ? this.state[dept] : [];
+    let arr = this.state[department] ? this.state[department] : [];
     arr.includes(value)
       ? (arr = arr.filter(e => e !== value))
       : arr.push(value);
@@ -25,7 +25,7 @@ export default class CheckBox extends React.Component {
       ? this.setState({ [value]: !this.state[value] })
       : this.setState({ [value]: true });
 
-    this.setState({ [dept]: arr });
+    this.setState({ [department]: arr });
   }
 
   render() {
