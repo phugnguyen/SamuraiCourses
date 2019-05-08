@@ -11,7 +11,7 @@ export default class SelectCourses extends React.Component {
     };
 
     this.handleInput = this.handleInput.bind(this);
-    this.handleGenerate = this.handleGenerate.bind(this);
+
     this.handleFindCourse = this.handleFindCourse.bind(this);
   }
 
@@ -20,12 +20,6 @@ export default class SelectCourses extends React.Component {
       this.setState({ [type]: value });
       console.log(this.state);
     };
-  }
-
-  //  Place holder
-  handleGenerate() {
-    console.log("You're generating my schedules !!");
-    console.log(this.state);
   }
 
   handleFindCourse() {
@@ -73,12 +67,9 @@ export default class SelectCourses extends React.Component {
           handleInput={this.handleInput}
           id="course_number"
         />
-        <Link to="#" className="nav-btn" onClick={this.handleFindCourse}>
+        <button className="nav-btn" onClick={this.handleFindCourse}>
           Find Courses!
-        </Link>
-        <Link to="#" className="nav-btn" onClick={this.handleGenerate}>
-          Generate Schedules
-        </Link>
+        </button>
       </div>
     );
   }
