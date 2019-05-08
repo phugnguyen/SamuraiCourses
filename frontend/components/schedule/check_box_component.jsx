@@ -4,17 +4,24 @@ import { Link } from "react-router-dom";
 export default class CheckBox extends React.Component {
   constructor(props) {
     super(props);
-    this.handleGenerate = this.handleGenerate.bind(this);
+    this.state = {};
+
+    this.handleSave = this.handleSave.bind(this);
+    this.handleChecked = this.handleChecked.bind(this);
   }
 
-  //  Place holder
-  handleGenerate() {
-    console.log("You're generating my schedules !!");
-    console.log(this.state);
+  handleSave() {
+    // add to myCourses component
+  }
+
+  handleChecked(e) {
+    //   this.setState({})
+    console.log(e.target);
+    console.log(e.target.value);
+    debugger;
   }
 
   render() {
-    // console.log("courses", this.props.courses);
     const { course_number, department, courses } = this.props;
     let matchedCourses = courses.filter(
       course =>
@@ -27,7 +34,11 @@ export default class CheckBox extends React.Component {
       return (
         <tr key={Math.random()}>
           <td key={Math.random()}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value={course.id}
+              onChange={this.handleChecked}
+            />
           </td>
           <td key={Math.random()}>
             {course.start_time + "-" + course.end_time}
@@ -56,8 +67,8 @@ export default class CheckBox extends React.Component {
             {matchedCourses}
           </tbody>
         </table>
-        <button className="nav-btn" onClick={this.handleGenerate}>
-          Generate Schedules
+        <button className="nav-btn" onClick={this.handleSave}>
+          Save selections!
         </button>
       </div>
     );
