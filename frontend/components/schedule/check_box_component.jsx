@@ -13,25 +13,29 @@ export default class CheckBox extends React.Component {
   handleSave() {}
 
   handleChecked(e) {
-    const val = e.target.value;
-    const dept = this.props.courses[val].code;
-    this.setState({ [dept]: [5, 5] });
+    const dept = this.props.department;
+    const value = e.target.value;
+
+    let arr = this.state[dept] ? this.state[dept] : [];
+    arr.includes(value)
+      ? (arr = arr.filter(e => e !== value))
+      : arr.push(value);
+
+    this.setState({ [dept]: arr });
   }
 
   render() {
-    const { course_number, department, courses } = this.props;
-    let matchedCourses = Object.values(courses).filter(
-      course =>
-        course.course_number === course_number &&
-        (course.department === department || course.code === department)
-    );
+    console.log(this.state);
+    let { course_number, department, courses } = this.props;
+
     let title = department + " " + course_number;
 
-    matchedCourses = matchedCourses.map(course => {
+    courses = courses.map(course => {
       return (
         <tr key={Math.random()}>
           <td key={Math.random()}>
             <input
+              checked
               type="checkbox"
               value={course.id}
               onChange={this.handleChecked}
@@ -47,7 +51,6 @@ export default class CheckBox extends React.Component {
 
     return (
       <div className="check-box-component">
-        {/* <h2>Select sections for {department + " " + course_number}</h2> */}
         <h2>Select sections for {title}</h2>
         <h3>
           Choose which sections you want us to pick from when creating your
@@ -61,9 +64,10 @@ export default class CheckBox extends React.Component {
               <td>Time</td>
               <td>Days</td>
             </tr>
-            {matchedCourses}
+            {courses}
           </tbody>
         </table>
+
         <button className="nav-btn" onClick={this.handleSave}>
           Save selections!
         </button>

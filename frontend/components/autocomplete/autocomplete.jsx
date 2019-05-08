@@ -162,8 +162,8 @@ class Autocomplete extends Component {
           value={userInput}
           placeholder={this.props.placeHolder}
           id={this.props.id}
-          // onClick={this.onClickInput}
-          autoComplete="off"
+
+          // autoComplete="off"
         />
         {suggestionsListComponent}
       </div>
