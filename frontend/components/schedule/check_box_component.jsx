@@ -17,6 +17,7 @@ export default class CheckBox extends React.Component {
     const { value } = e.target;
 
     let arr = this.state[department] ? this.state[department] : [];
+
     arr.includes(value)
       ? (arr = arr.filter(e => e !== value))
       : arr.push(value);
