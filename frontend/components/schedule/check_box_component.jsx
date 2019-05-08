@@ -31,10 +31,7 @@ export default class CheckBox extends React.Component {
   render() {
     console.log(this.state);
     let { course_number, department, courses } = this.props;
-
     let title = department + " " + course_number;
-
-    let checkBoxBool = this.state[department];
 
     courses = courses.map(course => {
       return (
