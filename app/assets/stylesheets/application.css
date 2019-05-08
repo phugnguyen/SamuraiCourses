@@ -51,6 +51,10 @@ header .logo {
   margin-left: 5px;
 }
 
+header .logo-div {
+  align-self: center;
+}
+
 .logo-img {
   width: 40px;
   display: block;
@@ -74,7 +78,7 @@ header .logo {
   border-radius: 5px;
   text-shadow: none;
   white-space: nowrap;
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .nav-btn:hover {

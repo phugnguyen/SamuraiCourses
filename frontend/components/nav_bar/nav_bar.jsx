@@ -24,7 +24,7 @@ export default ({ currentUser, logout, openModal }) => {
 
   return (
     <header className="nav-bar">
-      <div className="logo">
+      <div className="logo-div">
         <Link className="logo" to="/">
           SamuraiCourses
         </Link>
