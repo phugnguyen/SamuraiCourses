@@ -8,10 +8,12 @@ const receiveCourses = courses => ({
   courses
 });
 
-const receiveCourse = course => ({
+export const receiveCourse = course => ({
   type: RECEIVE_COURSE,
   course
 });
+
+export const receiveDepartment = department => ({});
 
 export const fetchCourses = termId => dispatch =>
   CourseUtil.fetchCourses(termId).then(courses =>

@@ -29,7 +29,7 @@ export default class SelectCourses extends React.Component {
   }
 
   handleFindCourse() {
-    console.log(this.state);
+    this.props.receiveCourse(this.state);
   }
 
   render() {
@@ -68,7 +68,8 @@ export default class SelectCourses extends React.Component {
         <label htmlFor="course_number">Course Number:</label>
         <Autocomplete
           suggestions={courseNumberSearchParams}
-          placeHolder="COURSE_NUMBER"
+          // placeHolder="COURSE_NUMBER"
+          placeHolder={courseNumberSearchParams}
           handleInput={this.handleInput}
           id="course_number"
         />

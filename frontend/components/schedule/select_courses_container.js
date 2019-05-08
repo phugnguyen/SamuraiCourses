@@ -1,7 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import SelectCourses from "./select_courses_component";
-import { fetchCourses, fetchCourse } from "../../actions/course_actions";
+import {
+  fetchCourses,
+  fetchCourse,
+  receiveCourse
+} from "../../actions/course_actions";
 
 const mSTP = state => {
   return {
@@ -13,7 +17,8 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
-    fetchCourses: termId => dispatch(fetchCourses(termId))
+    fetchCourses: termId => dispatch(fetchCourses(termId)),
+    receiveCourse: course => dispatch(receiveCourse(course))
   };
 };
 
