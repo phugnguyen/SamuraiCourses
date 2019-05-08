@@ -9,13 +9,17 @@ export default class CheckBox extends React.Component {
     // console.log("courses", this.props.courses);
     const { course_number, department, courses } = this.props;
     let matchedCourses = courses.filter(
-      course => course.course_number === course_number
+      course =>
+        course.course_number === course_number &&
+        (course.department === department || course.code === department)
     );
 
     matchedCourses = matchedCourses.map(course => {
       return (
         <ul>
-          <li key={Math.random()}>{course.department}</li>
+          <li key={Math.random()}>
+            {course.code + " " + course.course_number}
+          </li>
           <li key={Math.random()}>{course.start_time}</li>
           <li key={Math.random()}>{course.end_time}</li>
           <li key={Math.random()}>{course.days}</li>
