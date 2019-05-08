@@ -21,6 +21,10 @@ export default class CheckBox extends React.Component {
       ? (arr = arr.filter(e => e !== value))
       : arr.push(value);
 
+    !!this.state[value]
+      ? this.setState({ [value]: !this.state[value] })
+      : this.setState({ [value]: true });
+
     this.setState({ [dept]: arr });
   }
 
@@ -30,12 +34,14 @@ export default class CheckBox extends React.Component {
 
     let title = department + " " + course_number;
 
+    let checkBoxBool = this.state[department];
+
     courses = courses.map(course => {
       return (
         <tr key={Math.random()}>
           <td key={Math.random()}>
             <input
-              checked
+              checked={!!this.state[course.id]}
               type="checkbox"
               value={course.id}
               onChange={this.handleChecked}
