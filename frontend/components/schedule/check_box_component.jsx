@@ -10,15 +10,12 @@ export default class CheckBox extends React.Component {
     this.handleChecked = this.handleChecked.bind(this);
   }
 
-  handleSave() {
-    // add to myCourses component
-  }
+  handleSave() {}
 
   handleChecked(e) {
     const val = e.target.value;
     const dept = this.props.courses[val].code;
     this.setState({ [dept]: [5, 5] });
-    // debugger;
   }
 
   render() {

@@ -39,6 +39,7 @@ body {
   display: flex;
   justify-content: space-between;
   position: relative;
+  box-shadow: 0 0 10px rgb(53, 53, 53);
 }
 
 header .logo {
@@ -100,10 +101,16 @@ header .logo-div {
   padding: 20px;
   width: 300px;
   height: 350px;
+  /* -webkit-box-shadow: 0 0 10px rgb(53, 53, 53);
+  box-shadow: 0 0 10px rgb(53, 53, 53); */
 }
 
 .session-form h2 {
   margin: 0;
+}
+
+.session-form h3 {
+  align-self: flex-end;
 }
 .session-form h3:hover {
   cursor: pointer;

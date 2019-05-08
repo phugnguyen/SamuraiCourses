@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 export default ({ currentUser, logout, openModal }) => {
   const display = currentUser ? (
     <div className="nav-bar-btns">
-      <Link to="#" className="nav-btn">
-        {currentUser.username}
-      </Link>
       <Link to="#" className="nav-btn" onClick={logout}>
         Log Out
       </Link>
