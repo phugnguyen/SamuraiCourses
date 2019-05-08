@@ -15,15 +15,15 @@ export default class CheckBox extends React.Component {
   }
 
   handleChecked(e) {
-    //   this.setState({})
-    console.log(e.target);
-    console.log(e.target.value);
-    debugger;
+    const val = e.target.value;
+    const dept = this.props.courses[val].code;
+    this.setState({ [dept]: [5, 5] });
+    // debugger;
   }
 
   render() {
     const { course_number, department, courses } = this.props;
-    let matchedCourses = courses.filter(
+    let matchedCourses = Object.values(courses).filter(
       course =>
         course.course_number === course_number &&
         (course.department === department || course.code === department)
