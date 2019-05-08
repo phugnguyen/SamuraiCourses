@@ -91,6 +91,8 @@ header .logo-div {
   justify-content: space-around;
 }
 
+/* login/signup forms */
+
 .session-form {
   flex-direction: column;
   background-color: aliceblue;
@@ -102,6 +104,9 @@ header .logo-div {
 
 .session-form h2 {
   margin: 0;
+}
+.session-form h3:hover {
+  cursor: pointer;
 }
 
 .session-form label {

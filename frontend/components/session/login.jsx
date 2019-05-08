@@ -36,7 +36,9 @@ class Login extends React.Component {
     return (
       <div className="session-form">
         <h2>Log in to SamuraiCourses</h2>
-        <h3>... or register here!</h3>
+        <h3 onClick={() => this.props.openModal("signup")}>
+          ... or register here!
+        </h3>
 
         <br />
         <form>

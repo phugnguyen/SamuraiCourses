@@ -36,7 +36,9 @@ export default class Signup extends React.Component {
     return (
       <div className="session-form">
         <h2>Create a Samurai account</h2>
-        <h3>already have an account? Login!</h3>
+        <h3 onClick={() => this.props.openModal("login")}>
+          already have an account? Login!
+        </h3>
         <br />
         <form>
           <label htmlFor="username">Username</label>
