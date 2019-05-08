@@ -15,7 +15,8 @@ const mSTP = ({ errors }) => {
 
 const mDTP = dispatch => ({
   login: formUser => dispatch(login(formUser)),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
+  openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(
