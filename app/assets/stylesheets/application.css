@@ -211,6 +211,7 @@ header .logo {
   padding: 0.5rem;
 }
 
+.suggestion-active,
 .suggestions li:hover {
   background-color: #009adc;
   color: aliceblue;

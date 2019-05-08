@@ -17,7 +17,7 @@ export default class CheckBox extends React.Component {
 
     matchedCourses = matchedCourses.map(course => {
       return (
-        <tr>
+        <tr key={Math.random()}>
           <td key={Math.random()}>
             <input type="radio" />
           </td>
@@ -39,10 +39,14 @@ export default class CheckBox extends React.Component {
         </h3>
 
         <table>
-          <th />
-          <th>Time</th>
-          <th>Days</th>
-          <tbody>{matchedCourses}</tbody>
+          <tbody>
+            <tr>
+              <td />
+              <td>Time</td>
+              <td>Days</td>
+            </tr>
+            {matchedCourses}
+          </tbody>
         </table>
       </div>
     );
