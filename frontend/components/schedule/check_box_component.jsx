@@ -13,29 +13,37 @@ export default class CheckBox extends React.Component {
         course.course_number === course_number &&
         (course.department === department || course.code === department)
     );
+    let title = department + " " + course_number;
 
     matchedCourses = matchedCourses.map(course => {
       return (
-        <ul>
-          <li key={Math.random()}>
-            {course.code + " " + course.course_number}
-          </li>
-          <li key={Math.random()}>{course.start_time}</li>
-          <li key={Math.random()}>{course.end_time}</li>
-          <li key={Math.random()}>{course.days}</li>
-        </ul>
+        <tr>
+          <td key={Math.random()}>
+            <input type="radio" />
+          </td>
+          <td key={Math.random()}>
+            {course.start_time + "-" + course.end_time}
+          </td>
+          <td key={Math.random()}>{course.days}</td>
+        </tr>
       );
     });
 
     return (
       <div className="check-box-component">
         {/* <h2>Select sections for {department + " " + course_number}</h2> */}
-        <h2>Select sections for </h2>
+        <h2>Select sections for {title}</h2>
         <h3>
           Choose which sections you want us to pick from when creating your
           schedule.
         </h3>
-        {matchedCourses}
+
+        <table>
+          <th />
+          <th>Time</th>
+          <th>Days</th>
+          <tbody>{matchedCourses}</tbody>
+        </table>
       </div>
     );
   }
