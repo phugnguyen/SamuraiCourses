@@ -38,6 +38,7 @@ body {
   height: 40px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 header .logo {
@@ -51,7 +52,15 @@ header .logo {
 
 .logo-img {
   width: 40px;
-  transform: translateX(-25%);
+  display: block;
+  left: 50%;
+  opacity: 0.9;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.logo-img:hover {
+  opacity: 1;
 }
 
 .nav-btn {
