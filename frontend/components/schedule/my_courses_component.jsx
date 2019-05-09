@@ -11,7 +11,7 @@ export default class MyCourses extends React.Component {
 
   handleFindCourse(e) {
     // debugger;
-    const [department, course_number] = e.target.innerText.split(" ");
+    const [department, course_number] = e.target.value.split(" ");
     this.props.receiveCourse({ department, course_number });
   }
 
@@ -31,12 +31,16 @@ export default class MyCourses extends React.Component {
     arr = Array.from(new Set(arr));
 
     let myCourses = arr.map(courseTitle => (
-      <div className="my-course" key={courseTitle}>
+      <div className="my-course" key={Math.random()}>
         {courseTitle}
 
-        <div className="my-course-section" onClick={this.handleFindCourse}>
+        <option
+          className="my-course-section"
+          value={courseTitle}
+          onClick={this.handleFindCourse}
+        >
           Change your sections here
-        </div>
+        </option>
       </div>
     ));
 
