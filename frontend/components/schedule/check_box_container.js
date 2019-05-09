@@ -20,12 +20,9 @@ const mSTP = state => {
   };
 };
 
-// courseIds should be an array of Ids
-
 const mDTP = dispatch => {
   return {
-    receiveSelectedCourses: courseIds =>
-      dispatch(receiveSelectedCourses(courseIds))
+    receiveSelectedCourses: courses => dispatch(receiveSelectedCourses(courses))
   };
 };
 

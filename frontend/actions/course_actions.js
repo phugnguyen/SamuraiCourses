@@ -14,10 +14,9 @@ export const receiveCourse = course => ({
   course
 });
 
-// courseIds is an array of Ids
-export const receiveSelectedCourses = courseIds => ({
+export const receiveSelectedCourses = courses => ({
   type: RECEIVE_SELECTED_COURSES,
-  courseIds
+  courses
 });
 
 export const receiveDepartment = department => ({});

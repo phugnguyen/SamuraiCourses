@@ -11,11 +11,19 @@ export default class CheckBox extends React.Component {
   }
 
   handleSave() {
-    console.log(this.state);
-    const courseIds = Object.values(this.state)
-      .filter(val => val.length > 0)
-      .flat();
-    this.props.receiveSelectedCourses(courseIds);
+    const oldState = this.state;
+    let newState = {};
+
+    Object.keys(oldState).map(key => {
+      if (oldState[key].length > 0) newState[key] = oldState[key];
+    });
+
+    // const courseIds = Object.values(this.state)
+    //   .filter(val => val.length > 0)
+    //   .flat();
+    // this.props.receiveSelectedCourses(courseIds);
+
+    this.props.receiveSelectedCourses(newState);
   }
 
   handleChecked(e) {

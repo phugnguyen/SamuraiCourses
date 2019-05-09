@@ -4,12 +4,12 @@ import MyCourses from "./my_courses_component";
 import { receiveCourse } from "../../actions/course_actions";
 
 const mSTP = state => {
-  const defaultIds = {};
-  const courseIds = state.session.courseIds || defaultIds;
+  const defaultCourses = {};
+  const selectedCourses = state.session.courses || defaultCourses;
 
   return {
     courses: state.entities.courses,
-    courseIds: Object.values(courseIds)
+    selectedCourses
   };
 };
 

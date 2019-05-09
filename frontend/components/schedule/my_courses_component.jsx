@@ -18,19 +18,9 @@ export default class MyCourses extends React.Component {
   handleGenerate() {}
 
   render() {
-    const { courses, courseIds } = this.props;
-    let arr = [];
+    const { selectedCourses } = this.props;
 
-    courseIds.map(
-      courseId =>
-        (arr = arr.concat(
-          courses[courseId].code + " " + courses[courseId].course_number
-        ))
-    );
-
-    arr = Array.from(new Set(arr));
-
-    let myCourses = arr.map(courseTitle => (
+    let myCourses = Object.keys(selectedCourses).map(courseTitle => (
       <div className="my-course" key={Math.random()}>
         {courseTitle}
 
