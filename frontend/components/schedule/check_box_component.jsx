@@ -11,6 +11,7 @@ export default class CheckBox extends React.Component {
   }
 
   handleSave() {
+    console.log(this.state);
     const courseIds = Object.values(this.state)
       .filter(val => val.length > 0)
       .flat();
@@ -18,10 +19,12 @@ export default class CheckBox extends React.Component {
   }
 
   handleChecked(e) {
-    const { department } = this.props;
+    const { department, course_number } = this.props;
     const { value } = e.target;
 
-    let arr = this.state[department] ? this.state[department] : [];
+    let arr = this.state[department + " " + course_number]
+      ? this.state[department + " " + course_number]
+      : [];
 
     arr.includes(value)
       ? (arr = arr.filter(e => e !== value))
@@ -31,7 +34,7 @@ export default class CheckBox extends React.Component {
       ? this.setState({ [value]: !this.state[value] })
       : this.setState({ [value]: true });
 
-    this.setState({ [department]: arr });
+    this.setState({ [department + " " + course_number]: arr });
   }
 
   render() {
