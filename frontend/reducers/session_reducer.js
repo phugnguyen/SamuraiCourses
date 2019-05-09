@@ -25,10 +25,10 @@ export default (state = _nullSession, action) => {
     case LOGOUT_CURRENT_USER:
       return _nullSession;
     case RECEIVE_COURSE:
-      const { department, courseNumber } = action.course;
+      const { department, course_number } = action.course;
       return Object.assign({}, state, {
         department,
-        courseNumber
+        course_number
       });
     case RECEIVE_SELECTED_COURSES:
       return Object.assign({}, state, { courseIds: action.courseIds });
