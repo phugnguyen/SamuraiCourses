@@ -1,6 +1,11 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from "../actions/session";
 import { RECEIVE_SCHOOL, RECEIVE_TERM } from "../actions/school_actions";
-import { RECEIVE_COURSE } from "../actions/course_actions";
+
+import {
+  RECEIVE_COURSE,
+  RECEIVE_SELECTED_COURSES
+} from "../actions/course_actions";
+
 const _nullSession = {
   currentUser: null
 };
@@ -25,6 +30,8 @@ export default (state = _nullSession, action) => {
         department,
         course_number
       });
+    case RECEIVE_SELECTED_COURSES:
+      return Object.assign({}, state, { courseIds: action.courseIds });
     default:
       return state;
   }

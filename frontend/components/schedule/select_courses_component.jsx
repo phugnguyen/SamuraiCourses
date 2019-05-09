@@ -18,7 +18,6 @@ export default class SelectCourses extends React.Component {
   handleInput(type, value) {
     return e => {
       this.setState({ [type]: value });
-      console.log(this.state);
     };
   }
 

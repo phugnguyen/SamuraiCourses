@@ -10,7 +10,12 @@ export default class CheckBox extends React.Component {
     this.handleChecked = this.handleChecked.bind(this);
   }
 
-  handleSave() {}
+  handleSave() {
+    const courseIds = Object.values(this.state)
+      .filter(val => val.length > 0)
+      .flat();
+    this.props.receiveSelectedCourses(courseIds);
+  }
 
   handleChecked(e) {
     const { department } = this.props;
@@ -30,7 +35,6 @@ export default class CheckBox extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let { course_number, department, courses } = this.props;
     let title = department + " " + course_number;
 

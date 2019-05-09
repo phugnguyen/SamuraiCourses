@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import CheckBox from "./check_box_component";
+import { receiveSelectedCourses } from "../../actions/course_actions";
 
 const mSTP = state => {
   const { courses } = state.entities;
@@ -19,8 +20,13 @@ const mSTP = state => {
   };
 };
 
+// courseIds should be an array of Ids
+
 const mDTP = dispatch => {
-  return {};
+  return {
+    receiveSelectedCourses: courseIds =>
+      dispatch(receiveSelectedCourses(courseIds))
+  };
 };
 
 export default connect(
