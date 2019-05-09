@@ -257,3 +257,9 @@ header .logo-div {
   padding: 0.5rem;
   width: 300px;
 }
+
+/* myCourses class */
+
+.my-course-section:hover {
+  cursor: pointer;
+}
