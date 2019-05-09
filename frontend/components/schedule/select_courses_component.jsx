@@ -7,7 +7,7 @@ export default class SelectCourses extends React.Component {
     super(props);
     this.state = {
       department: "",
-      course_number: ""
+      courseNumber: ""
     };
 
     this.handleInput = this.handleInput.bind(this);
@@ -30,19 +30,19 @@ export default class SelectCourses extends React.Component {
     const { department } = this.state;
     let codes = [];
     let departments = [];
-    let course_numbers = [];
+    let courseNumbers = [];
     courses.map(course => {
       codes.push(course.code);
       departments.push(course.department);
       if (department === course.department || department === course.code) {
-        course_numbers.push(course.course_number);
+        courseNumbers.push(course.courseNumber);
       }
     });
     const departmentSearchParams = Array.from(
       new Set(codes.concat(departments))
     );
 
-    const courseNumberSearchParams = Array.from(new Set(course_numbers));
+    const courseNumberSearchParams = Array.from(new Set(courseNumbers));
     return (
       <div className="select-course-form">
         <h2>Select your courses!</h2>
@@ -61,7 +61,6 @@ export default class SelectCourses extends React.Component {
         <label htmlFor="course_number">Course Number:</label>
         <Autocomplete
           suggestions={courseNumberSearchParams}
-          // placeHolder="COURSE_NUMBER"
           placeHolder={courseNumberSearchParams}
           handleInput={this.handleInput}
           id="course_number"

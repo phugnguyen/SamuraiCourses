@@ -5,16 +5,16 @@ import { receiveSelectedCourses } from "../../actions/course_actions";
 
 const mSTP = state => {
   const { courses } = state.entities;
-  const { course_number, department } = state.session;
+  const { courseNumber, department } = state.session;
 
   let matchedCourses = Object.values(courses).filter(
     course =>
-      course.course_number === course_number &&
+      course.courseNumber === courseNumber &&
       (course.department === department || course.code === department)
   );
 
   return {
-    course_number,
+    courseNumber,
     department,
     courses: matchedCourses
   };
