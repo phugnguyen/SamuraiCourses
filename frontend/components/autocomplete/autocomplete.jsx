@@ -1,4 +1,4 @@
-// code from https://alligator.io/react/react-autocomplete/
+// code inspired from https://alligator.io/react/react-autocomplete/
 
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";

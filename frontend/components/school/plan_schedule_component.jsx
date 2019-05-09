@@ -2,6 +2,8 @@ import React from "react";
 import SchoolIndexContainer from "./school_index_container";
 import SelectCoursesContainer from "../schedule/select_courses_container";
 import CheckBoxContainer from "../schedule/check_box_container";
+import MyCoursesContainer from "../schedule/my_courses_container";
+
 class PlanSchedule extends React.Component {
   render() {
     return (
@@ -9,7 +11,7 @@ class PlanSchedule extends React.Component {
         <SchoolIndexContainer />
         <SelectCoursesContainer />
         <CheckBoxContainer />
-        {/* MyCoursesContainer */}
+        <MyCoursesContainer />
         {/* GeneratedSchedulesContainer */}
       </div>
     );
