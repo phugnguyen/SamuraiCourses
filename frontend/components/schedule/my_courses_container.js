@@ -7,7 +7,8 @@ const mSTP = state => {
   const courseIds = state.session.courseIds || defaultIds;
 
   return {
-    courseIds
+    courses: state.entities.courses,
+    courseIds: Object.values(courseIds)
   };
 };
 
