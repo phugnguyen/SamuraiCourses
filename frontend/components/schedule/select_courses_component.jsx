@@ -2,6 +2,11 @@ import React from "react";
 import Autocomplete from "../autocomplete/autocomplete";
 import { Link } from "react-router-dom";
 
+// https://stackoverflow.com/questions/9286473/whats-the-equivalent-of-sample-in-javascript
+function sample(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
 export default class SelectCourses extends React.Component {
   constructor(props) {
     super(props);
@@ -53,7 +58,7 @@ export default class SelectCourses extends React.Component {
           // must pass down to the child component,
           // if pass down functions it can affet the state
           // of the parent component
-          placeHolder="DEPARTMENT"
+          placeHolder={"e.g. " + sample(departmentSearchParams)}
           handleInput={this.handleInput}
           id="department"
         />
@@ -61,8 +66,7 @@ export default class SelectCourses extends React.Component {
         <label htmlFor="course_number">Course Number:</label>
         <Autocomplete
           suggestions={courseNumberSearchParams}
-          // placeHolder="COURSE_NUMBER"
-          placeHolder={courseNumberSearchParams}
+          placeHolder={"e.g. " + sample(courseNumberSearchParams)}
           handleInput={this.handleInput}
           id="course_number"
         />

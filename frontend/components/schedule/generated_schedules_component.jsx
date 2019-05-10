@@ -4,15 +4,15 @@ export default class GeneratedSchedules extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-
-    // this.potSchedules = this.potSchedules.bind(this);
     this.arrayCompare = this.arrayCompare.bind(this);
   }
 
   timesCollide(time1, time2) {
     // time1 and time2 come in as an array of strings
+    // in military time
     // time1 = ["900", "950"]
     // time2 = ["1300", "1350"]
+
     time1 = time1.map(time => Number(time));
     time2 = time2.map(time => Number(time));
 
@@ -34,9 +34,11 @@ export default class GeneratedSchedules extends React.Component {
   daysCollide(days1, days2) {
     // days1 = "MWF"
     // days2 = "TR" etc
+
     days2 = days2.split("");
 
-    // myAny?
+    // myAny? Implementation
+
     let result = false;
     for (let i = 0; i < days2.length; i++) {
       if (days1.includes(days2[i])) result = true;
@@ -57,6 +59,9 @@ export default class GeneratedSchedules extends React.Component {
           [course2.start_time].concat(course2.end_time)
         )
       ) {
+        // nested if loops may not provide an accurate return
+        // instead I saved it to a variable and returned it at
+        // the end
         result = true;
       } else {
         result = false;
@@ -67,8 +72,14 @@ export default class GeneratedSchedules extends React.Component {
     return result;
   }
 
+  // compares two arrays and returns a 2d array
+  // where I compare the entire first array to an element
+  // in the second array, if it passes the proc
+  // then we create a new array with that element pushed in
+
   arrayCompare(arr1, arr2) {
     const { courses } = this.props;
+
     // arr1 and arr2 are arrays of course Ids
     let subArr = [];
     for (let i = 0; i < arr2.length; i++) {
@@ -81,11 +92,23 @@ export default class GeneratedSchedules extends React.Component {
 
   render() {
     const { courses, selectedCourses } = this.props;
+    // values should come in as a 2d array where each row represents
+    // a different course and its offerings
+
     let values = Object.values(selectedCourses);
     if (values.length < 1) values = [[], [], []];
+
+    // our return 2d array
     let masterArr = [];
 
+    // array traversal
+    // result must contain all courses selected
+    // or else we will return an error later
+
+    // we are make every possible comparison
     for (let i = 0; i < values[0].length; i++) {
+      // have to store in a sub array since we will be traversing
+      // this array later on
       let subArr = [[values[0][i]]];
       for (let j = 1; j < values.length; j++) {
         let subArr2 = [];
