@@ -1,6 +1,7 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
-export default class MyCourses extends React.Component {
+class MyCourses extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -10,12 +11,14 @@ export default class MyCourses extends React.Component {
   }
 
   handleFindCourse(e) {
-    // debugger;
     const [department, course_number] = e.target.value.split(" ");
     this.props.receiveCourse({ department, course_number });
   }
 
-  handleGenerate() {}
+  handleGenerate() {
+    this.props.history.push("/addCourse/generateSchedule");
+    //redirect to /addCourse/generateSchedule
+  }
 
   render() {
     const { selectedCourses } = this.props;
@@ -46,3 +49,5 @@ export default class MyCourses extends React.Component {
     );
   }
 }
+
+export default withRouter(MyCourses);

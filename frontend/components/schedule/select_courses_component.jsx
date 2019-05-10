@@ -1,13 +1,14 @@
 import React from "react";
 import Autocomplete from "../autocomplete/autocomplete";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 // https://stackoverflow.com/questions/9286473/whats-the-equivalent-of-sample-in-javascript
 function sample(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-export default class SelectCourses extends React.Component {
+class SelectCourses extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,6 +29,8 @@ export default class SelectCourses extends React.Component {
 
   handleFindCourse() {
     this.props.receiveCourse(this.state);
+    this.props.history.push("/addCourse/checkBox");
+    // redirect to /addCourse/checkBox
   }
 
   render() {
@@ -66,7 +69,6 @@ export default class SelectCourses extends React.Component {
         <label htmlFor="course_number">Course Number:</label>
         <Autocomplete
           suggestions={courseNumberSearchParams}
-          // placeHolder={samplePlaceHolder}
           placeHolder={
             courseNumberSearchParams.length > 0
               ? "e.g. " + courseNumberSearchParams
@@ -82,3 +84,5 @@ export default class SelectCourses extends React.Component {
     );
   }
 }
+
+export default withRouter(SelectCourses);

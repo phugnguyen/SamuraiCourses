@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class SchoolIndex extends React.Component {
   constructor(props) {
@@ -24,7 +25,8 @@ class SchoolIndex extends React.Component {
     this.props.receiveTerm(this.state.term);
     this.props.fetchCourses(this.state.term);
 
-    // redirect to /planSchedule
+    this.props.history.push("/addCourse");
+    // redirect to /addCourse
   }
 
   componentDidMount() {
@@ -80,4 +82,4 @@ class SchoolIndex extends React.Component {
   }
 }
 
-export default SchoolIndex;
+export default withRouter(SchoolIndex);
