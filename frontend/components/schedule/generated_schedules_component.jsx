@@ -72,36 +72,12 @@ export default class GeneratedSchedules extends React.Component {
     // arr1 and arr2 are arrays of course Ids
     let subArr = [];
     for (let i = 0; i < arr2.length; i++) {
-      // insert callback below
       if (arr1.every(el => !this.isCollision(courses[el], courses[arr2[i]]))) {
         subArr.push(arr1.concat(arr2[i]));
       }
     }
     return subArr;
   }
-
-  //   potSchedules() {
-  //     const { courses, selectedCourses } = this.props;
-  //     const values = Object.values(selectedCourses);
-  //     let masterArr = [];
-
-  //     for (let j = 0; j < values[0].length; j++) {
-  //       let subArr = [values[j]];
-
-  //       for (let i = 1; i < values.length; i++) {
-  //         values[i].forEach(el1 => {
-  //           subArr.forEach(el2 => {
-  //             if (this.isCollision(courses[el2], courses[el1])) return;
-  //             // return subArr.push(el1);
-  //             subArr.push(el1);
-  //           });
-  //         });
-  //       }
-  //       masterArr.push(subArr);
-  //     }
-
-  //     console.log(masterArr);
-  //   }
 
   render() {
     const { courses, selectedCourses } = this.props;
