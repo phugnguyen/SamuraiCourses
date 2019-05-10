@@ -66,7 +66,12 @@ export default class SelectCourses extends React.Component {
         <label htmlFor="course_number">Course Number:</label>
         <Autocomplete
           suggestions={courseNumberSearchParams}
-          placeHolder={"e.g. " + sample(courseNumberSearchParams)}
+          // placeHolder={samplePlaceHolder}
+          placeHolder={
+            courseNumberSearchParams.length > 0
+              ? "e.g. " + courseNumberSearchParams
+              : "Please Enter a Department First"
+          }
           handleInput={this.handleInput}
           id="course_number"
         />
