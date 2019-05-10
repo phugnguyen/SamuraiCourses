@@ -39,7 +39,9 @@ export default class MyCourses extends React.Component {
         <h2>My Courses</h2>
         <h3>Your courses are here!</h3>
         {myCourses}
-        <button onClick={this.handleGenerate}>Generate my schedule!</button>
+        <button className="nav-btn" onClick={this.handleGenerate}>
+          Generate my schedule!
+        </button>
       </div>
     );
   }
