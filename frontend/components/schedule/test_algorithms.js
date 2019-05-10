@@ -9,7 +9,7 @@ function arrayCompare(arr1, arr2) {
   return subArr;
 }
 
-// expected output [ 8x [1,1,1] ];
+// expected output [ 8 x [1,1,1] ];
 
 const c = [[1, 1], [1, 2, 3, 1], [1, 1], [1, 1, 1]];
 let masterArr = [];

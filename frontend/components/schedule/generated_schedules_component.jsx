@@ -97,8 +97,6 @@ export default class GeneratedSchedules extends React.Component {
       masterArr = masterArr.concat(subArr);
     }
 
-    console.log("Master Schedule", masterArr);
-
     const masterScheduleRender = masterArr.map(schedule => {
       return (
         <ul>

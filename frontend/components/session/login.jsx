@@ -1,5 +1,12 @@
 import React from "react";
 
+// https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep
+// got sleep function from here ^^^^
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -9,6 +16,7 @@ class Login extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   handleInput(type) {
@@ -20,6 +28,13 @@ class Login extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.login(this.state).then(this.props.closeModal);
+  }
+
+  handleDemo() {
+    const username = "guest";
+    const password = "password";
+    const info = { username, password };
+    this.props.login(info).then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -62,7 +77,10 @@ class Login extends React.Component {
             onChange={this.handleInput("password")}
           />
           <br />
-          <button onClick={this.handleSubmit}>Log In</button>
+          <div className="login-buttons">
+            <button onClick={this.handleSubmit}>Log In</button>
+            <button onClick={this.handleDemo}>Demo Login</button>
+          </div>
 
           {this.renderErrors()}
         </form>

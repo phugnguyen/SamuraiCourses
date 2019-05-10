@@ -32,6 +32,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-img {
+  z-index: 2;
+}
+
+.home a {
+  position: relative;
+  bottom: 35vh;
+  z-index: 3;
+}
+
 .nav-bar {
   background-color: #026aa7;
   height: 40px;
@@ -101,8 +117,6 @@ header .logo-div {
   padding: 20px;
   width: 300px;
   height: 350px;
-  /* -webkit-box-shadow: 0 0 10px rgb(53, 53, 53);
-  box-shadow: 0 0 10px rgb(53, 53, 53); */
 }
 
 .session-form h2 {
@@ -111,9 +125,11 @@ header .logo-div {
 
 .session-form h3 {
   align-self: flex-end;
+  margin-bottom: 0px;
 }
 .session-form h3:hover {
   cursor: pointer;
+  color: rgb(147, 0, 0);
 }
 
 .session-form label {
@@ -121,19 +137,40 @@ header .logo-div {
 }
 
 .session-form input {
-  height: 22px;
+  height: 38px;
   margin-bottom: 7px;
-  width: 99%;
-  padding: 0px;
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.login-buttons {
+  display: flex;
+}
+
+.login-buttons button {
+  width: 50%;
+}
+
+.samurai-img {
+  z-index: 10;
+  width: 500px;
+}
+
+#img-bot {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .session-form button {
   height: 22px;
   width: 100%;
+  margin-top: 5px;
 }
 
 .session-form li {
   color: red;
+  font-size: 12px;
 }
 
 .modal-background {
@@ -159,11 +196,12 @@ header .logo-div {
   background-color: aliceblue;
   flex-direction: column;
   margin: auto;
-  /* width: 66%; */
-  /* padding: 5%; */
   max-width: 500px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  margin-top: 3vh;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(53, 53, 53);
 }
 
 .school-select-form h2 {
@@ -181,7 +219,8 @@ header .logo-div {
 .school-select-form li {
   list-style: none;
   padding: 5px;
-  width: 40%;
+  width: 33%;
+  text-align: center;
   color: white;
   background: #009adc;
   margin-right: 5px;
@@ -209,6 +248,7 @@ header .logo-div {
   width: 165px;
   align-self: center;
   height: 22px;
+  margin-bottom: 20px;
 }
 
 /* autocomplete styling */
