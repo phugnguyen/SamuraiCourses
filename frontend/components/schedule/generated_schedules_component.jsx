@@ -122,10 +122,37 @@ export default class GeneratedSchedules extends React.Component {
     }
 
     console.log("Master Schedule", masterArr);
+
+    const masterScheduleRender = masterArr.map(schedule => {
+      return (
+        <ul>
+          Schedule {Math.random()}
+          {schedule.map(courseId => {
+            return (
+              <>
+                <li>
+                  {courses[courseId].code +
+                    " " +
+                    courses[courseId].course_number}
+                </li>
+                <li>
+                  {courses[courseId].start_time +
+                    "-" +
+                    courses[courseId].end_time}
+                </li>
+                <li>{courses[courseId].days}</li>
+              </>
+            );
+          })}
+        </ul>
+      );
+    });
+
     return (
       <div>
         <h2>Generated Schedules</h2>
         <h3>See your generated schedules here</h3>
+        {masterScheduleRender}
       </div>
     );
   }
