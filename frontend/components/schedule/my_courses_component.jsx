@@ -13,6 +13,7 @@ class MyCourses extends React.Component {
   handleFindCourse(e) {
     const [department, course_number] = e.target.value.split(" ");
     this.props.receiveCourse({ department, course_number });
+    this.props.history.push("/addCourse/checkBox");
   }
 
   handleGenerate() {
