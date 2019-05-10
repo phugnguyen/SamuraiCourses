@@ -265,12 +265,13 @@ header .logo-div {
   max-height: 143px;
   overflow-y: auto;
   padding-left: 0;
-  width: calc(300px + 1rem);
+  width: 100%;
   position: absolute;
   top: 30px;
   left: 0;
   z-index: 1;
   background-color: aliceblue;
+  box-sizing: border-box;
 }
 
 .suggestions li {
@@ -283,9 +284,6 @@ header .logo-div {
   color: aliceblue;
   cursor: pointer;
   font-weight: 700;
-  /* position: absolute;
-  top: 0;
-  right: 0; */
 }
 
 .suggestions li:not(:last-of-type) {
@@ -295,11 +293,82 @@ header .logo-div {
 .select-course-form input {
   border: 1px solid #999;
   padding: 0.5rem;
-  width: 300px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* myCourses class */
 
 .my-course-section:hover {
   cursor: pointer;
+}
+
+/* sidebar */
+
+.sidebar {
+  display: flex;
+  background-color: aliceblue;
+  flex-direction: column;
+  max-width: 250px;
+  padding: 10px;
+  height: 75vh;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 3vh;
+  margin-left: 3vh;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(53, 53, 53);
+}
+
+/* checkbox component */
+.check-box-component {
+  display: flex;
+  background-color: aliceblue;
+  flex-direction: column;
+  max-width: 250px;
+  padding: 10px;
+  height: 75vh;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 3vh;
+  margin-left: 3vh;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(53, 53, 53);
+}
+.generate-schedules {
+  display: flex;
+  background-color: aliceblue;
+  flex-direction: column;
+  max-width: 250px;
+  padding: 10px;
+  height: 75vh;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 3vh;
+  margin-left: 3vh;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(53, 53, 53);
+}
+
+.select-section {
+  display: flex;
+  background-color: aliceblue;
+  flex-direction: column;
+  max-width: 250px;
+  padding: 10px;
+  height: 75vh;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 3vh;
+  margin-left: 3vh;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(53, 53, 53);
+}
+
+.add-courses {
+  display: flex;
+}
+
+.schedule-view {
+  display: flex;
 }

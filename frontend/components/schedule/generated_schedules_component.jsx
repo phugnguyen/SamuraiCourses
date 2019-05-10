@@ -146,7 +146,7 @@ export default class GeneratedSchedules extends React.Component {
     });
 
     return (
-      <div>
+      <div className="generate-schedules">
         <h2>Generated Schedules</h2>
         <h3>See your generated schedules here</h3>
         {masterScheduleRender}
