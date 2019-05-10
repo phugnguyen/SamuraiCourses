@@ -1,4 +1,18 @@
 # README
+# Samurai Courses
+Samurai Courses, a Ninja Courses clone, is a course scheduling platform that allows students to plan their schedules without having to worry about which courses will conflict with each other.
+
+## Technologies
+## Features
+
+### Dashboard & Schedules
+### Snapshots
+### Select School
+### Add Courses
+### Select Different Course Offerings
+### Generate Schedules Without Conflict
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
