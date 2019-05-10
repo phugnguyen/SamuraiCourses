@@ -2,14 +2,22 @@
 # Samurai Courses
 Samurai Courses, a Ninja Courses clone, is a course scheduling platform that allows students to plan their schedules without having to worry about which courses will conflict with each other.
 
+[Live Demo](https://samurai-courses.herokuapp.com)
+
 ## Technologies
+* Backend: Ruby on Rails/ActiveRecord/PostreSQL
+* Frontend: React/Redux
+
 ## Features
+* BCrypt encryption for passwords and session tokens
+* Fast schedule generator
 
 ### Dashboard & Schedules
 ### Snapshots
-### Select School
-### Add Courses
+### Select School and Add Courses
+
 ### Select Different Course Offerings
+
 ### Generate Schedules Without Conflict
 
 
