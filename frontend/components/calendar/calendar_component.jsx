@@ -43,9 +43,39 @@ class Calendar extends React.Component {
         course_number: "10"
       }
     ];
+
+    const timeRange = [];
+    schedule.map(course => {
+      timeRange = timeRange.concat([course.start_time, course.end_time]);
+    });
+
+    // what time to start and end the weekly schedule at
+    // based on the earliest and latest times
+    let begin = Math.min(...timeRange);
+    let end = Math.max(...timeRange);
+
+    // round begin to the earliest hour
+    begin = Math.floor(begin / 100) * 100;
+
+    // round the end to the nearest 30 minutes
+    const minutes = end % 100;
+    minutes > 30 ? (end += 60 - minutes) : (end += 30 - minutes);
+
+    const pixPerHour = 45;
+    const calenderHeight = (end - begin) / 100;
+    calenderHeight *= pixPerHour;
+
     return (
       <div>
-        <h3>Schedule here</h3>
+        <div>
+          <div>Blank</div>
+          <div>M</div>
+          <div>T</div>
+          <div>W</div>
+          <div>R</div>
+          <div>F</div>
+        </div>
+        <div>days of the week</div>
       </div>
     );
   }
