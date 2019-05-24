@@ -105,6 +105,10 @@ export default class GeneratedSchedules extends React.Component {
     // result must contain all courses selected
     // or else we will return an error later
 
+    // [[5,6,7,8] , [9,10,11,12], [13,14,15,16]]
+
+    // {days: "MWF", start: "1200", end: "1250"}
+
     // we are make every possible comparison
     for (let i = 0; i < values[0].length; i++) {
       // have to store in a sub array since we will be traversing
