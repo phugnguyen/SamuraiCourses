@@ -20,7 +20,7 @@ class DayOfWeek extends React.Component {
   // convert diff if in format 115 for 1 hour 15 mins
   // or anything over 60 minutes
   convertToMin(duration) {
-    return (duration / 100) * 60 + (diff % 100);
+    return (duration / 100) * 60 + (duration % 100);
   }
 
   styleDiv(course) {
@@ -29,7 +29,6 @@ class DayOfWeek extends React.Component {
 
     let duration = end_time - start_time;
     duration < 60 ? (duration /= 60) : (duration = this.convertToMin(duration));
-
     const divHeight = duration * pixPerHour;
 
     let topOffset = start_time - begin;
