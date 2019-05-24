@@ -1,4 +1,5 @@
 import React from "react";
+import DayOfWeek from "./day_of_week_component";
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -45,8 +46,20 @@ class Calendar extends React.Component {
     ];
 
     const timeRange = [];
+    let monday = [],
+      tuesday = [],
+      wednesday = [],
+      thursday = [],
+      friday = [];
+
     schedule.map(course => {
       timeRange = timeRange.concat([course.start_time, course.end_time]);
+      const days = new Set(course.days);
+      if (days.has("M")) monday.push(course);
+      if (days.has("T")) tuesday.push(course);
+      if (days.has("W")) wednesday.push(course);
+      if (days.has("R")) thursday.push(course);
+      if (days.has("F")) friday.push(course);
     });
 
     // what time to start and end the weekly schedule at
@@ -75,7 +88,15 @@ class Calendar extends React.Component {
           <div>R</div>
           <div>F</div>
         </div>
-        <div>days of the week</div>
+        <div>
+          <DayOfWeek
+            calenderHeight={calenderHeight}
+            pixPerHour={pixPerHour}
+            courses={monday}
+            begin={begin}
+            end={end}
+          />
+        </div>
       </div>
     );
   }
