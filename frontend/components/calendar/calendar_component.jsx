@@ -23,23 +23,23 @@ class Calendar extends React.Component {
         course_number: "10"
       },
       {
-        start_time: "1000",
-        end_time: "1050",
+        start_time: "1200",
+        end_time: "1250",
         days: "MWF",
         code: "MATH",
         course_number: "10"
       },
       {
-        start_time: "900",
-        end_time: "950",
-        days: "TR",
+        start_time: "1100",
+        end_time: "1150",
+        days: "MWF",
         code: "CMPSC",
         course_number: "10"
       },
       {
         start_time: "1000",
         end_time: "1050",
-        days: "TR",
+        days: "MWF",
         code: "PHIL",
         course_number: "10"
       }
@@ -81,13 +81,13 @@ class Calendar extends React.Component {
 
     return (
       <div>
-        <div>
-          <div>Blank</div>
-          <div>M</div>
-          <div>T</div>
-          <div>W</div>
-          <div>R</div>
-          <div>F</div>
+        <div className="days-container">
+          <div className="days">Blank</div>
+          <div className="days">M</div>
+          <div className="days">T</div>
+          <div className="days">W</div>
+          <div className="days">R</div>
+          <div className="days">F</div>
         </div>
         <div>
           <DayOfWeek
