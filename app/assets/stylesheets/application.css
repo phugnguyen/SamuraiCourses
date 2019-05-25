@@ -365,6 +365,8 @@ header .logo-div {
 .days,
 .daily-schedule {
   width: 150px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .course-div {

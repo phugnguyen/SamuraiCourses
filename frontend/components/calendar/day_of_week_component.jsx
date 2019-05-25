@@ -50,9 +50,7 @@ class DayOfWeek extends React.Component {
     const { calendarHeight, courses } = this.props;
     let dailySchedule = courses.map(course => this.styleDiv(course));
     const dailyStyle = {
-      height: `${calendarHeight}px`,
-      position: "relative",
-      width: "150px"
+      height: `${calendarHeight}px`
     };
 
     return (
