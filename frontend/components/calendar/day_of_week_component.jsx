@@ -35,21 +35,31 @@ class DayOfWeek extends React.Component {
 
     // TODO: properly do inline style
     const style = {
-      position: "absolute",
-      height: divHeight + "px",
-      top: topOffset + "px",
-      width: "100%",
+      height: `${divHeight}px`,
+      top: `${topOffset}px`,
       backgroundColor: "red"
     };
-    return <div style={style}>{code + " " + course_number}</div>;
+    return (
+      <div className="course-div" style={style}>
+        {code + " " + course_number}
+      </div>
+    );
   }
 
   render() {
     const { calendarHeight, courses } = this.props;
     let dailySchedule = courses.map(course => this.styleDiv(course));
-    const dailyStyle = { height: calendarHeight + "px", position: "relative" };
+    const dailyStyle = {
+      height: `${calendarHeight}px`,
+      position: "relative",
+      width: "150px"
+    };
 
-    return <div style={dailyStyle}>{dailySchedule}</div>;
+    return (
+      <div className="daily-schedule" style={dailyStyle}>
+        {dailySchedule}
+      </div>
+    );
   }
 }
 

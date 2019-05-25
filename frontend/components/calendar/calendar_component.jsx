@@ -39,7 +39,7 @@ class Calendar extends React.Component {
       {
         start_time: "1000",
         end_time: "1050",
-        days: "MWF",
+        days: "TR",
         code: "PHIL",
         course_number: "10"
       }
@@ -82,18 +82,47 @@ class Calendar extends React.Component {
     return (
       <div>
         <div className="days-container">
-          <div className="days">Blank</div>
+          <div className="days-blank">Blank</div>
           <div className="days">M</div>
           <div className="days">T</div>
           <div className="days">W</div>
           <div className="days">R</div>
           <div className="days">F</div>
         </div>
-        <div>
+        <div className="calendar-rows">
+          <div>TIME</div>
           <DayOfWeek
             calendarHeight={calendarHeight}
             pixPerHour={pixPerHour}
             courses={monday}
+            begin={begin}
+            end={end}
+          />
+          <DayOfWeek
+            calendarHeight={calendarHeight}
+            pixPerHour={pixPerHour}
+            courses={tuesday}
+            begin={begin}
+            end={end}
+          />
+          <DayOfWeek
+            calendarHeight={calendarHeight}
+            pixPerHour={pixPerHour}
+            courses={wednesday}
+            begin={begin}
+            end={end}
+          />
+          <DayOfWeek
+            calendarHeight={calendarHeight}
+            pixPerHour={pixPerHour}
+            courses={thursday}
+            begin={begin}
+            end={end}
+          />
+          <DayOfWeek
+            calendarHeight={calendarHeight}
+            pixPerHour={pixPerHour}
+            courses={friday}
             begin={begin}
             end={end}
           />

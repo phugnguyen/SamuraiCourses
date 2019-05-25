@@ -356,3 +356,20 @@ header .logo-div {
   display: flex;
   justify-content: center;
 }
+
+.days-container,
+.calendar-rows {
+  display: flex;
+}
+
+.days,
+.daily-schedule {
+  width: 150px;
+}
+
+.course-div {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+}
