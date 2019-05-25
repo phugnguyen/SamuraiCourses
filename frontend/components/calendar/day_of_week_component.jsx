@@ -1,5 +1,4 @@
 import React from "react";
-import { start } from "repl";
 
 {
   /* <DayOfWeek
@@ -31,7 +30,8 @@ class DayOfWeek extends React.Component {
     duration < 60 ? (duration /= 60) : (duration = this.convertToMin(duration));
     const divHeight = duration * pixPerHour;
 
-    let topOffset = start_time - begin;
+    let topOffset = ((start_time - begin) / 100) * pixPerHour;
+    console.log(start_time, begin);
 
     // TODO: properly do inline style
     const style = {
@@ -44,6 +44,7 @@ class DayOfWeek extends React.Component {
 
   render() {
     const { calendarHeight, courses } = this.props;
+    console.log(this.props);
     let dailySchedule = courses.map(course => this.styleDiv(course));
     const dailyStyle = { height: calendarHeight + "px", position: "relative" };
 
