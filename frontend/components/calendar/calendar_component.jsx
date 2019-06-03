@@ -87,15 +87,23 @@ class Calendar extends React.Component {
 
     let time = timeDivsArr.map(hour => (
       <>
-        <div style={{ height: pixPerHour / 2 }}>{hour}</div>
-        <div style={{ height: pixPerHour / 2 }} />
+        <div
+          className="left-schedule-time-div"
+          style={{ height: pixPerHour / 2 }}
+        >
+          {hour}
+        </div>
+        <div
+          className="left-schedule-time-div"
+          style={{ height: pixPerHour / 2 }}
+        />
       </>
     ));
 
     return (
       <div>
         <div className="days-container">
-          <div className="days-blank">Blank</div>
+          <div className="left-schedule-time-div" />
           <div className="days">M</div>
           <div className="days">T</div>
           <div className="days">W</div>

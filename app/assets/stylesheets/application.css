@@ -375,3 +375,11 @@ header .logo-div {
   z-index: 2;
   text-align: center;
 }
+
+/* calendar stuff */
+.left-schedule-time-div {
+  width: 50px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 2px 2px 0px 2px;
+}
