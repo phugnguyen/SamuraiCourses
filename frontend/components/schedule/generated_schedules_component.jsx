@@ -53,7 +53,7 @@ export default class GeneratedSchedules extends React.Component {
     let result;
     if (this.daysCollide(course1.days, course2.days)) {
       if (
-        //check if times collide, times come in as strings
+        // check if times collide, times come in as strings
         this.timesCollide(
           [course1.start_time].concat(course1.end_time),
           [course2.start_time].concat(course2.end_time)

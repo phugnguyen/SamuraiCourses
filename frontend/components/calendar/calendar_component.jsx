@@ -14,6 +14,7 @@ class Calendar extends React.Component {
     // props input is an array where each element is a course_Id
     // find time range
 
+    // replace schedule with something from props
     const schedule = [
       {
         start_time: "900",
