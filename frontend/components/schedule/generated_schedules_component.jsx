@@ -92,6 +92,11 @@ export default class GeneratedSchedules extends React.Component {
     return subArr;
   }
 
+  handleNextSchedule() {
+    this.setState({ currentSchedule: this.state.currentSchedule + 1 });
+    console.log(this.state.currentSchedule);
+  }
+
   componentDidMount() {
     const { courses, selectedCourses } = this.props;
 
@@ -136,13 +141,14 @@ export default class GeneratedSchedules extends React.Component {
 
   render() {
     const { currentSchedule } = this.state;
+    console.log(currentSchedule);
     return (
       <div className="generate-schedules">
         <h2>Generated Schedules</h2>
         <h3>See your generated schedules here</h3>
         {/* render selection bar? */}
+        <button onClick={() => this.handleNextSchedule()}>Next</button>
         <CalendarComponent schedule={this.state[currentSchedule]} />
-        {/* render calendar component */}
       </div>
     );
   }

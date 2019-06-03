@@ -68,7 +68,6 @@ class Calendar extends React.Component {
     // based on the earliest and latest times
     let begin = Math.min(...timeRange);
     let end = Math.max(...timeRange);
-    console.log(begin, end);
 
     // round begin to the earliest hour
     begin = Math.floor(begin / 100) * 100;
