@@ -123,9 +123,13 @@ export default class GeneratedSchedules extends React.Component {
       }
       masterArr = masterArr.concat(subArr);
     }
+    masterArr.forEach((schedule, idx) => {
+      this.setState({ [idx + 1]: schedule });
+    });
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="generate-schedules">
         <h2>Generated Schedules</h2>
