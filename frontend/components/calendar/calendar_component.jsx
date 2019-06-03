@@ -89,11 +89,13 @@ class Calendar extends React.Component {
       <>
         <div
           className="left-schedule-time-div"
+          id="time-div-top"
           style={{ height: pixPerHour / 2 }}
         >
           {hour}
         </div>
         <div
+          id="time-div-bottom"
           className="left-schedule-time-div"
           style={{ height: pixPerHour / 2 }}
         />
@@ -103,7 +105,7 @@ class Calendar extends React.Component {
     return (
       <div>
         <div className="days-container">
-          <div className="left-schedule-time-div" />
+          <div className="left-schedule-time-div" id="time-div-blank" />
           <div className="days">M</div>
           <div className="days">T</div>
           <div className="days">W</div>
