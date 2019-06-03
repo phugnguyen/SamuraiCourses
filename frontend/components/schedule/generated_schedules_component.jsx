@@ -94,6 +94,8 @@ export default class GeneratedSchedules extends React.Component {
 
   handleNextSchedule(arg) {
     const { currentSchedule } = this.state;
+
+    // only update if new currentSchedule is in range
     if (arg === "prev" && currentSchedule > 1) {
       this.setState({ currentSchedule: currentSchedule - 1 });
     } else if (arg === "next" && currentSchedule + 1 < this.state.length + 1) {
