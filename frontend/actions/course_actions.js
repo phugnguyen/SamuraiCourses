@@ -19,8 +19,6 @@ export const receiveSelectedCourses = payload => ({
   payload
 });
 
-export const receiveDepartment = department => ({});
-
 export const fetchCourses = termId => dispatch =>
   CourseUtil.fetchCourses(termId).then(courses =>
     dispatch(receiveCourses(courses))
