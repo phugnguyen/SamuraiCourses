@@ -29,9 +29,6 @@ class DayOfWeek extends React.Component {
     let duration = end_time - start_time;
     if (duration > 60) duration = this.convertToMin(duration);
     duration /= 60;
-    // duration < 60
-    //   ? (duration /= 60)
-    //   : (duration = this.convertToMin(duration) / 60);
 
     const divHeight = duration * pixPerHour;
 

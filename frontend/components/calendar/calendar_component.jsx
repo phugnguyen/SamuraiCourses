@@ -17,7 +17,6 @@ class Calendar extends React.Component {
     // replace schedule with something from props
 
     const { schedule } = this.props;
-    console.log(schedule);
 
     // const schedule = [
     //   {
@@ -83,6 +82,14 @@ class Calendar extends React.Component {
     let calendarHeight = (end - begin) / 100;
     calendarHeight *= pixPerHour;
 
+    let timeDivsArr = [];
+    for (let i = begin; i < end; i += 100) timeDivsArr.push(i);
+
+    let time = timeDivsArr.map(hour => (
+      <div style={{ height: pixPerHour }}>{hour}</div>
+    ));
+    console.log(time);
+
     return (
       <div>
         <div className="days-container">
@@ -94,7 +101,7 @@ class Calendar extends React.Component {
           <div className="days">F</div>
         </div>
         <div className="calendar-rows">
-          <div>TIME</div>
+          <div>{time}</div>
           <DayOfWeek
             calendarHeight={calendarHeight}
             pixPerHour={pixPerHour}
