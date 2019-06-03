@@ -5,7 +5,7 @@ import Calendar from "../calendar/calendar_component";
 export default class GeneratedSchedules extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 1: [] };
+    this.state = { 1: [], currentSchedule: 1 };
     this.arrayCompare = this.arrayCompare.bind(this);
   }
 
@@ -135,13 +135,13 @@ export default class GeneratedSchedules extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+    const { currentSchedule } = this.state;
     return (
       <div className="generate-schedules">
         <h2>Generated Schedules</h2>
         <h3>See your generated schedules here</h3>
         {/* render selection bar? */}
-        <CalendarComponent schedule={this.state[1]} />
+        <CalendarComponent schedule={this.state[currentSchedule]} />
         {/* render calendar component */}
       </div>
     );
