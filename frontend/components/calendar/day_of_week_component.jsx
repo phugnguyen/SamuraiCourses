@@ -32,7 +32,7 @@ class DayOfWeek extends React.Component {
 
     let topOffset = ((start_time - begin) / 100) * pixPerHour;
 
-    // TODO: add variable backgroundColor from props
+    TODO: add variable backgroundColor from props
     const style = {
       height: `${divHeight}px`,
       top: `${topOffset}px`,
