@@ -25,7 +25,7 @@ export default class CheckBox extends React.Component {
     });
 
     const newState = { courses, checkedCourses };
-    console.log(newState);
+
     this.props.receiveSelectedCourses(newState);
   }
 
@@ -49,7 +49,6 @@ export default class CheckBox extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let { course_number, department, courses } = this.props;
     let title = department + " " + course_number;
 
