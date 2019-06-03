@@ -290,6 +290,13 @@ header .logo-div {
   border-bottom: 1px solid #999;
 }
 
+.no-suggestions {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  color: red;
+}
+
 .select-course-form input {
   border: 1px solid #999;
   padding: 0.5rem;

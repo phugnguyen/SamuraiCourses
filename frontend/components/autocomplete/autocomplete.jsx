@@ -146,9 +146,7 @@ class Autocomplete extends Component {
         );
       } else {
         suggestionsListComponent = (
-          <div className="no-suggestions">
-            <em>No suggestions, you're on your own!</em>
-          </div>
+          <div className="no-suggestions">No suggestions</div>
         );
       }
     }
