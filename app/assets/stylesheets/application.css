@@ -328,7 +328,8 @@ header .logo-div {
 }
 
 /* checkbox component */
-.check-box-component {
+.check-box-component,
+.generate-schedules {
   display: flex;
   background-color: aliceblue;
   flex-direction: column;
@@ -340,9 +341,11 @@ header .logo-div {
   margin-left: 3vh;
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(53, 53, 53);
+  width: 65%;
+  min-width: 25vh;
 }
 
-.select-section,
+/* .select-section,
 .generate-schedules {
   display: flex;
   background-color: aliceblue;
@@ -356,7 +359,7 @@ header .logo-div {
   margin-left: 3vh;
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(53, 53, 53);
-}
+} */
 
 .schedule-view,
 .add-courses {
@@ -371,7 +374,7 @@ header .logo-div {
 
 .days,
 .daily-schedule {
-  width: 150px;
+  width: 15%;
   position: relative;
   box-sizing: border-box;
 }
