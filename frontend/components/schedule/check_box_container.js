@@ -7,6 +7,7 @@ const mSTP = state => {
   const { courses } = state.entities;
   const { course_number, department } = state.session;
   const { checkedCourses } = state.ui;
+  const myCourses = state.session.courses || {};
 
   let matchedCourses = Object.values(courses).filter(
     course =>
@@ -15,6 +16,7 @@ const mSTP = state => {
   );
 
   return {
+    myCourses,
     course_number,
     department,
     checkedCourses,

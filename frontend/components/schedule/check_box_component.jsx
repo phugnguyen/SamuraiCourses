@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 export default class CheckBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.checkedCourses;
+    const { checkedCourses, myCourses } = this.props;
+    this.state = Object.assign({}, checkedCourses, myCourses);
 
     this.handleSave = this.handleSave.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
@@ -48,6 +49,7 @@ export default class CheckBox extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     let { course_number, department, courses } = this.props;
     let title = department + " " + course_number;
 
