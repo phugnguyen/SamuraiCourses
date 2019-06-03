@@ -31,9 +31,8 @@ class DayOfWeek extends React.Component {
     const divHeight = duration * pixPerHour;
 
     let topOffset = ((start_time - begin) / 100) * pixPerHour;
-    console.log(start_time, begin);
 
-    // TODO: properly do inline style
+    // TODO: add variable backgroundColor from props
     const style = {
       height: `${divHeight}px`,
       top: `${topOffset}px`,
