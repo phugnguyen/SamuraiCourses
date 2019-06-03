@@ -86,9 +86,11 @@ class Calendar extends React.Component {
     for (let i = begin; i < end; i += 100) timeDivsArr.push(i);
 
     let time = timeDivsArr.map(hour => (
-      <div style={{ height: pixPerHour }}>{hour}</div>
+      <>
+        <div style={{ height: pixPerHour / 2 }}>{hour}</div>
+        <div style={{ height: pixPerHour / 2 }} />
+      </>
     ));
-    console.log(time);
 
     return (
       <div>
