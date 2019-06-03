@@ -1,9 +1,11 @@
 import React from "react";
+import CalendarComponent from "../calendar/calendar_component";
+import Calendar from "../calendar/calendar_component";
 
 export default class GeneratedSchedules extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { 1: [] };
     this.arrayCompare = this.arrayCompare.bind(this);
   }
 
@@ -92,6 +94,7 @@ export default class GeneratedSchedules extends React.Component {
 
   componentDidMount() {
     const { courses, selectedCourses } = this.props;
+
     // values should come in as a 2d array where each row represents
     // a different course and its offerings
 
@@ -123,7 +126,10 @@ export default class GeneratedSchedules extends React.Component {
       }
       masterArr = masterArr.concat(subArr);
     }
+
+    // store individual schedules in the local state
     masterArr.forEach((schedule, idx) => {
+      schedule = schedule.map(courseId => courses[courseId]);
       this.setState({ [idx + 1]: schedule });
     });
   }
@@ -134,6 +140,9 @@ export default class GeneratedSchedules extends React.Component {
       <div className="generate-schedules">
         <h2>Generated Schedules</h2>
         <h3>See your generated schedules here</h3>
+        {/* render selection bar? */}
+        <CalendarComponent schedule={this.state[1]} />
+        {/* render calendar component */}
       </div>
     );
   }
