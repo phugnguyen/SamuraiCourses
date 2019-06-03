@@ -6,6 +6,7 @@ import { receiveSelectedCourses } from "../../actions/course_actions";
 const mSTP = state => {
   const { courses } = state.entities;
   const { course_number, department } = state.session;
+  const { checkedCourses } = state.ui;
 
   let matchedCourses = Object.values(courses).filter(
     course =>
@@ -16,13 +17,14 @@ const mSTP = state => {
   return {
     course_number,
     department,
+    checkedCourses,
     courses: matchedCourses
   };
 };
 
 const mDTP = dispatch => {
   return {
-    receiveSelectedCourses: courses => dispatch(receiveSelectedCourses(courses))
+    receiveSelectedCourses: payload => dispatch(receiveSelectedCourses(payload))
   };
 };
 

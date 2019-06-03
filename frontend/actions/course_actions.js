@@ -14,9 +14,9 @@ export const receiveCourse = course => ({
   course
 });
 
-export const receiveSelectedCourses = courses => ({
+export const receiveSelectedCourses = payload => ({
   type: RECEIVE_SELECTED_COURSES,
-  courses
+  payload
 });
 
 export const receiveDepartment = department => ({});

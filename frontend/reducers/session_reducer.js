@@ -31,7 +31,7 @@ export default (state = _nullSession, action) => {
         course_number
       });
     case RECEIVE_SELECTED_COURSES:
-      const courses = action.courses || {};
+      const courses = action.payload.courses || {};
       return Object.assign({}, state, { courses });
     default:
       return state;

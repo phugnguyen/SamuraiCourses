@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class CheckBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = this.props.checkedCourses;
 
     this.handleSave = this.handleSave.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
@@ -12,17 +12,19 @@ export default class CheckBox extends React.Component {
 
   handleSave() {
     const oldState = this.state;
-    let newState = {};
+    let courses = {};
+    let checkedCourses = {};
 
     Object.keys(oldState).map(key => {
-      if (oldState[key].length > 0) newState[key] = oldState[key];
+      if (oldState[key].length > 0) {
+        courses[key] = oldState[key];
+      } else {
+        checkedCourses[key] = oldState[key];
+      }
     });
 
-    // const courseIds = Object.values(this.state)
-    //   .filter(val => val.length > 0)
-    //   .flat();
-    // this.props.receiveSelectedCourses(courseIds);
-
+    const newState = { courses, checkedCourses };
+    console.log(newState);
     this.props.receiveSelectedCourses(newState);
   }
 
