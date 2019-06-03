@@ -96,7 +96,7 @@ export default class GeneratedSchedules extends React.Component {
     const { currentSchedule } = this.state;
     if (arg === "prev" && currentSchedule > 1) {
       this.setState({ currentSchedule: currentSchedule - 1 });
-    } else if (arg === "next" && currentSchedule + 1 < this.state.length) {
+    } else if (arg === "next" && currentSchedule + 1 < this.state.length + 1) {
       this.setState({ currentSchedule: currentSchedule + 1 });
     }
   }
@@ -146,14 +146,13 @@ export default class GeneratedSchedules extends React.Component {
 
   render() {
     const { currentSchedule } = this.state;
-    console.log(currentSchedule, this.state.length);
     return (
       <div className="generate-schedules">
         <h2>Generated Schedules</h2>
         <h3>See your generated schedules here</h3>
         {/* render selection bar? */}
-        <button onClick={() => this.handleNextSchedule("next")}>Next</button>
         <button onClick={() => this.handleNextSchedule("prev")}>Prev</button>
+        <button onClick={() => this.handleNextSchedule("next")}>Next</button>
         <CalendarComponent schedule={this.state[currentSchedule]} />
       </div>
     );

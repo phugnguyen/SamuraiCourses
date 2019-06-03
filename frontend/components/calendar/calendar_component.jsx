@@ -15,7 +15,10 @@ class Calendar extends React.Component {
     // find time range
 
     // replace schedule with something from props
+
     const { schedule } = this.props;
+    console.log(schedule);
+
     // const schedule = [
     //   {
     //     start_time: "900",
@@ -25,8 +28,8 @@ class Calendar extends React.Component {
     //     course_number: "10"
     //   },
     //   {
-    //     start_time: "1200",
-    //     end_time: "1250",
+    //     start_time: "1500",
+    //     end_time: "1550",
     //     days: "MWF",
     //     code: "MATH",
     //     course_number: "10"
