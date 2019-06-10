@@ -105,9 +105,9 @@ class Autocomplete extends Component {
     }
   };
 
-  // onClickInput = () => {
-  //   this.setState({ activeSuggestion: 0, showSuggestions: true });
-  // };
+  onClickInput = () => {
+    this.setState({ activeSuggestion: 0, showSuggestions: true });
+  };
 
   render() {
     const {
