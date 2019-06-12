@@ -405,6 +405,10 @@ header .logo-div {
   text-align: center;
 }
 
+.calendar-view-container {
+  margin: inherit;
+}
+
 /* calendar stuff */
 .left-schedule-time-div {
   width: 50px;

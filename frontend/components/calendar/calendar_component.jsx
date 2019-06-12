@@ -103,7 +103,7 @@ class Calendar extends React.Component {
     ));
 
     return (
-      <div>
+      <div className="calendar-view-container">
         <div className="days-container">
           <div className="left-schedule-time-div" id="time-div-blank" />
           <div className="days">M</div>
