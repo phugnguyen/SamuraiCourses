@@ -68,7 +68,7 @@ export default class CheckBox extends React.Component {
       minutes = "0" + minutes;
     }
 
-    return hours + ":" + minutes + " " + ampm;
+    return hours + ":" + minutes + ampm;
   }
 
   render() {
@@ -88,7 +88,7 @@ export default class CheckBox extends React.Component {
           </td>
           <td key={Math.random()}>
             {this.handleTime(course.start_time) +
-              "-" +
+              " - " +
               this.handleTime(course.end_time)}
           </td>
           <td key={Math.random()}>{course.days}</td>

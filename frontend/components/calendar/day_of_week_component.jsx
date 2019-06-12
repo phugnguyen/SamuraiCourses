@@ -48,14 +48,21 @@ class DayOfWeek extends React.Component {
   }
 
   render() {
-    const { calendarHeight, courses } = this.props;
+    let { calendarHeight, courses, timeDiv, pixPerHour } = this.props;
+    !!timeDiv ? timeDiv : (timeDiv = []);
+
+    let time = timeDiv.map(hour => (
+      <>
+        <div class="day-div-top" style={{ height: pixPerHour / 2 }} />
+        <div class="day-div-bottom" style={{ height: pixPerHour / 2 }} />
+      </>
+    ));
+
     let dailySchedule = courses.map(course => this.styleDiv(course));
-    const dailyStyle = {
-      height: `${calendarHeight}px`
-    };
 
     return (
-      <div className="daily-schedule" style={dailyStyle}>
+      <div className="daily-schedule">
+        {time}
         {dailySchedule}
       </div>
     );

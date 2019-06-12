@@ -120,6 +120,7 @@ class Calendar extends React.Component {
             courses={monday}
             begin={begin}
             end={end}
+            timeDiv={timeDivsArr}
           />
           <DayOfWeek
             calendarHeight={calendarHeight}
@@ -127,6 +128,7 @@ class Calendar extends React.Component {
             courses={tuesday}
             begin={begin}
             end={end}
+            timeDiv={timeDivsArr}
           />
           <DayOfWeek
             calendarHeight={calendarHeight}
@@ -134,6 +136,7 @@ class Calendar extends React.Component {
             courses={wednesday}
             begin={begin}
             end={end}
+            timeDiv={timeDivsArr}
           />
           <DayOfWeek
             calendarHeight={calendarHeight}
@@ -141,6 +144,7 @@ class Calendar extends React.Component {
             courses={thursday}
             begin={begin}
             end={end}
+            timeDiv={timeDivsArr}
           />
           <DayOfWeek
             calendarHeight={calendarHeight}
@@ -148,6 +152,7 @@ class Calendar extends React.Component {
             courses={friday}
             begin={begin}
             end={end}
+            timeDiv={timeDivsArr}
           />
         </div>
       </div>
