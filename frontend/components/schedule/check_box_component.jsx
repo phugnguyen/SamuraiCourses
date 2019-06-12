@@ -48,6 +48,29 @@ export default class CheckBox extends React.Component {
     this.setState({ [department + " " + course_number]: arr });
   }
 
+  handleTime(oldtime) {
+    oldtime = Number(oldtime);
+    let hours;
+    let minutes;
+    let ampm;
+    hours = Math.trunc(oldtime / 100);
+    minutes = oldtime % 100;
+
+    if (hours > 12) {
+      ampm = "PM";
+      hours -= 12;
+    } else if (hours === 12) {
+      ampm = "PM";
+    } else {
+      ampm = "AM";
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    return hours + ":" + minutes + " " + ampm;
+  }
+
   render() {
     let { course_number, department, courses } = this.props;
     let title = department + " " + course_number;
@@ -64,7 +87,9 @@ export default class CheckBox extends React.Component {
             />
           </td>
           <td key={Math.random()}>
-            {course.start_time + "-" + course.end_time}
+            {this.handleTime(course.start_time) +
+              "-" +
+              this.handleTime(course.end_time)}
           </td>
           <td key={Math.random()}>{course.days}</td>
         </tr>
