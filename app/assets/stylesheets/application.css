@@ -154,7 +154,7 @@ header .logo-div {
 
 .samurai-img {
   z-index: 10;
-  width: 500px;
+  width: 100vh;
 }
 
 #img-bot {
@@ -388,6 +388,31 @@ header .logo-div {
   z-index: 2;
   text-align: center;
   white-space: nowrap;
+  box-sizing: border-box;
+}
+
+#course-1 {
+  border: 1px solid rgb(74, 184, 252);
+  background-color: rgb(199, 233, 254);
+}
+
+#course-2 {
+  border: 1px solid rgb(255, 184, 184);
+  background-color: rgb(253, 232, 232);
+}
+
+#course-3 {
+  border: 1px solid rgb(255, 200, 0);
+  background-color: rgb(255, 233, 153);
+}
+
+#course-4 {
+  border: 1px solid rgb(185, 96, 195);
+  background-color: rgb(227, 188, 230);
+}
+#course-5 {
+  border: 1px solid rgb(103, 255, 56);
+  background-color: rgb(200, 255, 184);
 }
 
 .calendar-view-container {

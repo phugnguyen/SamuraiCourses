@@ -7,6 +7,29 @@ class Calendar extends React.Component {
     this.state = {};
   }
 
+  handleTime(oldtime) {
+    oldtime = Number(oldtime);
+    let hours;
+    let minutes;
+    let ampm;
+    hours = Math.trunc(oldtime / 100);
+    minutes = oldtime % 100;
+
+    if (hours > 12) {
+      ampm = "PM";
+      hours -= 12;
+    } else if (hours === 12) {
+      ampm = "PM";
+    } else {
+      ampm = "AM";
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    return hours + ":" + minutes;
+  }
+
   render() {
     // Generate [blank, M, T, W, R, F]
     // Generate time range
@@ -56,9 +79,11 @@ class Calendar extends React.Component {
       thursday = [],
       friday = [];
 
-    schedule.map(course => {
+    schedule.map((course, idx) => {
       timeRange = timeRange.concat([course.start_time, course.end_time]);
       const days = new Set(course.days);
+      course = Object.assign({}, course, { colorNumber: idx + 1 });
+
       if (days.has("M")) monday.push(course);
       if (days.has("T")) tuesday.push(course);
       if (days.has("W")) wednesday.push(course);
@@ -92,7 +117,7 @@ class Calendar extends React.Component {
           id="time-div-top"
           style={{ height: pixPerHour / 2 }}
         >
-          {hour}
+          {this.handleTime(hour)}
         </div>
         <div
           id="time-div-bottom"

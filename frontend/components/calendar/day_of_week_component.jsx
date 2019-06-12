@@ -24,7 +24,7 @@ class DayOfWeek extends React.Component {
 
   styleDiv(course) {
     const { pixPerHour, begin } = this.props;
-    const { start_time, end_time, code, course_number } = course;
+    const { start_time, end_time, code, course_number, colorNumber } = course;
 
     let duration = end_time - start_time;
     if (duration > 60) duration = this.convertToMin(duration);
@@ -37,11 +37,10 @@ class DayOfWeek extends React.Component {
     // TODO: add variable backgroundColor from props
     const style = {
       height: `${divHeight}px`,
-      top: `${topOffset}px`,
-      backgroundColor: "red"
+      top: `${topOffset}px`
     };
     return (
-      <div className="course-div" style={style}>
+      <div className="course-div" id={"course-" + colorNumber} style={style}>
         {code + " " + course_number}
       </div>
     );
@@ -53,8 +52,8 @@ class DayOfWeek extends React.Component {
 
     let time = timeDiv.map(hour => (
       <>
-        <div class="day-div-top" style={{ height: pixPerHour / 2 }} />
-        <div class="day-div-bottom" style={{ height: pixPerHour / 2 }} />
+        <div className="day-div-top" style={{ height: pixPerHour / 2 }} />
+        <div className="day-div-bottom" style={{ height: pixPerHour / 2 }} />
       </>
     ));
 
