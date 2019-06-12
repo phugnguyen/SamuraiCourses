@@ -345,22 +345,6 @@ header .logo-div {
   min-width: 25vh;
 }
 
-/* .select-section,
-.generate-schedules {
-  display: flex;
-  background-color: aliceblue;
-  flex-direction: column;
-  width: 100vh;
-  padding: 10px;
-  height: 75vh;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin-top: 3vh;
-  margin-left: 3vh;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgb(53, 53, 53);
-} */
-
 .schedule-view,
 .add-courses {
   display: flex;
@@ -403,6 +387,7 @@ header .logo-div {
   width: 100%;
   z-index: 2;
   text-align: center;
+  white-space: nowrap;
 }
 
 .calendar-view-container {

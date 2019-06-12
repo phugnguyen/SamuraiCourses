@@ -12,7 +12,22 @@ class AddCourses extends React.Component {
           <SelectCoursesContainer />
           <MyCoursesContainer />
         </div>
-        <div className="generate-schedules" />
+        <div className="generate-schedules">
+          <marquee behavior="alternate" direction="left">
+            <img
+              className="samurai-img"
+              id="img-top"
+              src={window.samuraiCuteImg}
+            />
+          </marquee>
+          <marquee behavior="alternate" direction="right">
+            <img
+              className="samurai-img"
+              id="img-bot"
+              src={window.samuraiCuteImg}
+            />
+          </marquee>
+        </div>
       </div>
     );
   }

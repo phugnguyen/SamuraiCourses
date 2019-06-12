@@ -24,12 +24,6 @@ function Modal({ modal, closeModal }) {
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         {component}
       </div>
-      <marquee behavior="alternate" direction="left">
-        <img className="samurai-img" id="img-top" src={window.samuraiCuteImg} />
-      </marquee>
-      <marquee behavior="alternate" direction="right">
-        <img className="samurai-img" id="img-bot" src={window.samuraiCuteImg} />
-      </marquee>
     </div>
   );
 }
