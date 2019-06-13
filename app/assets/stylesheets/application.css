@@ -422,7 +422,7 @@ header .logo-div {
 
 /* calendar stuff */
 .left-schedule-time-div {
-  width: 50px;
+  min-width: 50px;
   box-sizing: border-box;
 }
 
@@ -430,6 +430,7 @@ header .logo-div {
   border-style: solid;
   border-width: 0px 1px 1px 1px;
   border-bottom-style: dotted;
+  text-align: center;
 }
 
 #time-div-bottom {
