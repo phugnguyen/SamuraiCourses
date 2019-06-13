@@ -306,8 +306,24 @@ header .logo-div {
 
 /* myCourses class */
 
+.my-course {
+  display: flex;
+  justify-content: space-between;
+  border: solid grey;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
+.my-course:hover {
+  border: dotted grey;
+  border-width: 1px;
+}
+
 .my-course-section:hover {
   cursor: pointer;
+  color: #009adc;
 }
 
 /* sidebar */
@@ -318,7 +334,7 @@ header .logo-div {
   flex-direction: column;
   max-width: 250px;
   padding: 10px;
-  height: 75vh;
+  /* height: 75vh; */
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-top: 3vh;
@@ -334,7 +350,7 @@ header .logo-div {
   background-color: aliceblue;
   flex-direction: column;
   padding: 10px;
-  height: 75vh;
+  /* height: 75vh; */
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-top: 3vh;

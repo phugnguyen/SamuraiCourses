@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Course.delete_all
 Term.delete_all
 School.delete_all
 User.delete_all
@@ -43,8 +44,8 @@ schools.each do |school|
     end
 end
 
-codes = %w(KOR CMPSC MATH PHIL)
-departments = %w(Korean Computer_Science Mathematics Philosophy)
+codes = %w(KOR CMPSC MATH PHIL BIO PHYS CHEM HIST ART BUS ENG)
+departments = %w(Korean Computer_Science Mathematics Philosophy Biology Physics Chemistry History Art Business Engineering)
 days = %w(MWF TR)
 duration = [50, 115]
 
@@ -52,19 +53,21 @@ start_times = (8..18).to_a.map{ |el| el*100 }
 
 terms.each do |term|
     codes.each_with_index do |code, idx|
-        randNum = rand(1..10)
-        4.times do 
-            s = start_times.sample
-            Course.create!({
-                department: departments[idx],
-                code: code,
-                course_number: randNum,
-                term_id: term.id,
-                start_time: s,
-                end_time: s + duration.sample,
-                days: days.sample
-            })
-        end
+        5.times do 
+            randNum = rand(1..200)
+            5.times do 
+             s = start_times.sample
+                Course.create!({
+                    department: departments[idx],
+                    code: code,
+                    course_number: randNum,
+                    term_id: term.id,
+                    start_time: s,
+                    end_time: s + duration.sample,
+                    days: days.sample
+                })
+            end
+         end
     end
 end
 

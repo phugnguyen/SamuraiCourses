@@ -30,15 +30,17 @@ class MyCourses extends React.Component {
 
     let myCourses = Object.keys(selectedCourses).map(courseTitle => (
       <div className="my-course" key={Math.random()}>
-        {courseTitle}
+        <div>{courseTitle}</div>
 
-        <option
-          className="my-course-section"
-          value={courseTitle}
-          onClick={this.handleFindCourse}
-        >
-          Change your sections here
-        </option>
+        <div>
+          <option
+            className="my-course-section"
+            value={courseTitle}
+            onClick={this.handleFindCourse}
+          >
+            (sections)
+          </option>{" "}
+        </div>
       </div>
     ));
 

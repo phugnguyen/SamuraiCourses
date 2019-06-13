@@ -59,11 +59,7 @@ class SchoolIndex extends React.Component {
           ))}
         </ul>
 
-        <select
-          // key="select"
-          value={this.state.term}
-          onChange={this.handleInput("term")}
-        >
+        <select value={this.state.term} onChange={this.handleInput("term")}>
           <option key={Math.random()} value="">
             {selectedDrop}
           </option>
