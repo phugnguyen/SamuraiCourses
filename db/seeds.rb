@@ -30,7 +30,7 @@ d = School.create!({
 })
 
 schools = [a,b,c,d]
-seasons = %w(Winter Spring Summer Fall)
+seasons = %w(Fall Summer Spring Winter)
 terms = []
 
 schools.each do |school|
@@ -48,7 +48,7 @@ departments = %w(Korean Computer_Science Mathematics Philosophy)
 days = %w(MWF TR)
 duration = [50, 115]
 
-start_times = (8..13).to_a.map{ |el| el*100 }
+start_times = (8..18).to_a.map{ |el| el*100 }
 
 terms.each do |term|
     codes.each_with_index do |code, idx|
