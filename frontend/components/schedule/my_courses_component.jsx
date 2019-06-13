@@ -21,6 +21,10 @@ class MyCourses extends React.Component {
     //redirect to /addCourse/generateSchedule
   }
 
+  // componentWillUnmount() {
+  //   this.props.nukeSelectedCourses();
+  // }
+
   render() {
     const { selectedCourses } = this.props;
 

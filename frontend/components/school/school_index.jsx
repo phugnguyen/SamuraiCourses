@@ -31,6 +31,7 @@ class SchoolIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchSchools();
+    this.props.nukeSelectedCourses();
   }
 
   render() {

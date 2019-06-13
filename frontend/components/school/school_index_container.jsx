@@ -7,6 +7,8 @@ import {
   receiveTerm
 } from "../../actions/school_actions";
 
+import { nukeSelectedCourses } from "../../actions/session";
+
 import { fetchCourses, fetchCourse } from "../../actions/course_actions";
 
 const mSTP = state => {
@@ -25,7 +27,8 @@ const mDTP = dispatch => ({
   fetchSchools: () => dispatch(fetchSchools()),
   fetchSchool: id => dispatch(fetchSchool(id)),
   receiveTerm: term => dispatch(receiveTerm(term)),
-  fetchCourses: termId => dispatch(fetchCourses(termId))
+  fetchCourses: termId => dispatch(fetchCourses(termId)),
+  nukeSelectedCourses: () => dispatch(nukeSelectedCourses())
 });
 
 export default connect(

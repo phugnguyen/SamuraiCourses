@@ -5,7 +5,7 @@ import { receiveCourse } from "../../actions/course_actions";
 
 const mSTP = state => {
   const defaultCourses = {};
-  const selectedCourses = state.session.courses || defaultCourses;
+  let selectedCourses = state.session.courses || defaultCourses;
 
   return {
     courses: state.entities.courses,

@@ -1,4 +1,9 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from "../actions/session";
+import {
+  RECEIVE_CURRENT_USER,
+  LOGOUT_CURRENT_USER,
+  NUKE_SELECTED_COURSES
+} from "../actions/session";
+
 import { RECEIVE_SCHOOL, RECEIVE_TERM } from "../actions/school_actions";
 
 import {
@@ -33,6 +38,8 @@ export default (state = _nullSession, action) => {
     case RECEIVE_SELECTED_COURSES:
       const courses = action.payload.courses || {};
       return Object.assign({}, state, { courses });
+    case NUKE_SELECTED_COURSES:
+      return Object.assign({}, state, { courses: {} });
     default:
       return state;
   }
