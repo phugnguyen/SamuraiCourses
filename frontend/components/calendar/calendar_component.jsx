@@ -126,11 +126,11 @@ class Calendar extends React.Component {
       <div className="calendar-view-container">
         <div className="days-container">
           <div className="left-schedule-time-div" id="time-div-blank" />
-          <div className="days">M</div>
-          <div className="days">T</div>
-          <div className="days">W</div>
-          <div className="days">R</div>
-          <div className="days">F</div>
+          <div className="days">Monday</div>
+          <div className="days">Tuesday</div>
+          <div className="days">Wednesday</div>
+          <div className="days">Thursday</div>
+          <div className="days">Friday</div>
         </div>
         <div className="calendar-rows">
           <div>{time}</div>
