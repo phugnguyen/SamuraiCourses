@@ -155,6 +155,7 @@ header .logo-div {
 .samurai-img {
   z-index: 2;
   width: 100vh;
+  height: 75vh;
 }
 
 #img-bot {
@@ -332,13 +333,13 @@ header .logo-div {
   display: flex;
   background-color: aliceblue;
   flex-direction: column;
-  max-width: 250px;
+  min-width: 250px;
   padding: 10px;
-  /* height: 75vh; */
+  min-height: 75vh;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-top: 3vh;
-  /* margin-left: 3vh; */
+
   border-radius: 5px;
   box-shadow: 0 0 10px rgb(53, 53, 53);
 }
@@ -350,7 +351,7 @@ header .logo-div {
   background-color: aliceblue;
   flex-direction: column;
   padding: 10px;
-  /* height: 75vh; */
+  min-height: 75vh;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-top: 3vh;
