@@ -12,11 +12,6 @@ import { nukeSelectedCourses } from "../../actions/session";
 import { fetchCourses, fetchCourse } from "../../actions/course_actions";
 
 const mSTP = state => {
-  // let arr = [];
-  // Object.values(state.entities.terms).map(term =>
-  //   arr.push(term.season + " " + term.year)
-  // );
-
   return {
     schools: Object.values(state.entities.schools),
     terms: Object.values(state.entities.terms)

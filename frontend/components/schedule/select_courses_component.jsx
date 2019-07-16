@@ -77,7 +77,11 @@ class SelectCourses extends React.Component {
           handleInput={this.handleInput}
           id="course_number"
         />
-        <button className="nav-btn" onClick={this.handleFindCourse}>
+        <button
+          className="nav-btn"
+          id="find-courses-btn"
+          onClick={this.handleFindCourse}
+        >
           Find Courses!
         </button>
       </div>
