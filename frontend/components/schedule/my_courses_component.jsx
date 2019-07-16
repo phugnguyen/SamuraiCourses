@@ -18,12 +18,7 @@ class MyCourses extends React.Component {
 
   handleGenerate() {
     this.props.history.push("/addCourse/generateSchedule");
-    //redirect to /addCourse/generateSchedule
   }
-
-  // componentWillUnmount() {
-  //   this.props.nukeSelectedCourses();
-  // }
 
   render() {
     const { selectedCourses } = this.props;
