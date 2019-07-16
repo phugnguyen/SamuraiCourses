@@ -26,14 +26,6 @@ class Calendar extends React.Component {
   }
 
   render() {
-    // Generate [blank, M, T, W, R, F]
-    // Generate time range
-
-    // props input is an array where each element is a course_Id
-    // find time range
-
-    // replace schedule with something from props
-
     const { schedule } = this.props;
 
     let timeRange = [];
