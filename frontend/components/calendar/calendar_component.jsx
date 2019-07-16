@@ -36,37 +36,6 @@ class Calendar extends React.Component {
 
     const { schedule } = this.props;
 
-    // const schedule = [
-    //   {
-    //     start_time: "900",
-    //     end_time: "950",
-    //     days: "MWF",
-    //     code: "KOR",
-    //     course_number: "10"
-    //   },
-    //   {
-    //     start_time: "1500",
-    //     end_time: "1550",
-    //     days: "MWF",
-    //     code: "MATH",
-    //     course_number: "10"
-    //   },
-    //   {
-    //     start_time: "1100",
-    //     end_time: "1150",
-    //     days: "MWF",
-    //     code: "CMPSC",
-    //     course_number: "10"
-    //   },
-    //   {
-    //     start_time: "1000",
-    //     end_time: "1050",
-    //     days: "TR",
-    //     code: "PHIL",
-    //     course_number: "10"
-    //   }
-    // ];
-
     let timeRange = [];
     let monday = [],
       tuesday = [],
